@@ -1,0 +1,32 @@
+[user]
+  name = Vitalii Rybachenko
+  email = vit@ribachenko.com
+
+[github]
+  user = vitaliyr
+
+[push]
+  default = current
+
+[color]
+  ui = true
+
+[core]
+  excludesfile = ~/.gitignore
+	editor = nano
+
+[format]
+  pretty = %Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset
+  graph = true
+
+[advice]
+  statusHints = false
+
+[log]
+  abbrevCommit = true
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
