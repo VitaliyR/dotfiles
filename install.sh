@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Bash
-echo 'source .dotfiles/terminal/init.sh' >> ~/.profile
+echo '. ~/.dotfiles/terminal/init.sh' >> ~/.profile
 
 # Git
 ln -s git/.gitconfig ~

@@ -1,2 +1,2 @@
-source '.dotfiles/terminal/highlight.sh'
-source '.dotfiles/terminal/aliases.sh'
+. ~/.dotfiles/terminal/highlight.sh
+. ~/.dotfiles/terminal/aliases.sh
