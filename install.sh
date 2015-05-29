@@ -30,4 +30,5 @@ cp sublime/Preferences.sublime-settings  ~/Library/Application\ Support/Sublime\
 cp sublime/Package\ Control.sublime-settings ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User/Package\ Control.sublime-settings
 cp sublime/Default\ \(OSX\).sublime-keymap ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User/Default\ \(OSX\).sublime-keymap
 
-echo '
+echo 'Change sublime icon'
+echo 'Import IntelliJ settings'

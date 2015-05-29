@@ -1,9 +1,10 @@
 # Dotfiles
-My configuration files for utilities which I'm using everyday. 
+My configuration files for utilities which I'm using everyday.
+![Screenshot](img/terminal.png)
 
 ## Features
 * No dependencies
-* Bash profile
+* Bash
  * aliases for npm, bower
  * aliases for brew
  * lock - run screensaver with password protection
@@ -14,18 +15,32 @@ My configuration files for utilities which I'm using everyday.
  * h{{lang}} - hjs, hhtml, hcss - syntax highlighter for the code from buffer. Puts highlighted back to buffer
  * gc - opens google chrome with disabled web security (sometimes required for lazy development without setuping local web server)
  * some maven crappy alias
+ * cool highlight of terminal output
 * Homebrew
  * For packages look into [brew.txt](.dotfiles/brew.txt)
 * Sublime
  * Settings are copied from [Preferences](.dotfiles/preferences.sublime-settings). Not symlink because there is a bug with that when you saving sublime settings into symlinked file.
  * Custom icon is located under [dotfiles](.dotfiles) directory. For now on - change is manually
- * Packages
+* NPM
+ * Installs packages defined in [npm.txt](npm.txt) globally
+* Git config and global ignore
+* IntelliJ IDE exported settings
+* Nano syntax highlighter
+* iTerm color theme
 
 ## Installation
 ```
 cd ~ && git clone --recursive git://github.com/vitaliyr/dotfiles.git ~/.dotfiles && sh ~/.dotfiles/install.sh
 ```
 * Change icon for the SublimeText
+* Import settings for IntelliJ
+
+## Packing
+Because I can't link Sublime configs (weird bug - when they're linked, you can't change settings from sublime) there is a [pack.sh](pack.sh) script which generally copies sublime 
+settings to working directory of dotfiles repository after what you can commit them. Also I'm put there brew 'backup'.
+```
+sh pack.sh
+```
 
 ## Thanks
 * [Paul Miller](https://github.com/paulmillr) for bootstrap and ideas
