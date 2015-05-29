@@ -1,0 +1,44 @@
+{
+	"bold_folder_labels": true,
+	"caret_style": "phase",
+	"color_scheme": "Packages/Predawn Monokai/Predawn Monokai.tmTheme",
+	"draw_minimap_border": true,
+	"ensure_newline_at_eof_on_save": false,
+	"file_exclude_patterns":
+	[
+		".DS_Store",
+		"*.map",
+		"*.min.js"
+	],
+	"findreplace_small": true,
+	"fold_buttons": true,
+	"folder_exclude_patterns":
+	[
+		".git",
+		"log",
+		"tmp",
+		"node_modules"
+	],
+	"font_face": "Source Code Pro",
+	"font_options":
+	[
+		"no_round"
+	],
+	"font_size": 15,
+	"highlight_line": true,
+	"highlight_modified_tabs": true,
+	"ignored_packages":
+	[
+		"CSS",
+		"Vintage"
+	],
+	"reveal-on-activate": false,
+	"save_on_focus_lost": false,
+	"side_bar_width": 210,
+	"tab_size": 2,
+	"tabs_small": true,
+	"theme": "predawn.sublime-theme",
+	"translate_tabs_to_spaces": true,
+	"trim_trailing_white_space_on_save": true,
+	"word_wrap": true
+}

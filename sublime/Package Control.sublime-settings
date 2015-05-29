@@ -1,0 +1,44 @@
+{
+	"in_process_packages":
+	[
+	],
+	"installed_packages":
+	[
+		"ApplySyntax",
+		"Autoprefixer",
+		"Better CoffeeScript",
+		"Color Highlighter",
+		"ColorPicker",
+		"CQ Clientlibs Syntax Highlight",
+		"CSS3",
+		"DocBlockr",
+		"Dracula Color Scheme",
+		"EditorConfig",
+		"Ember.js Snippets",
+		"Emblem.js Syntax Highlighting",
+		"Emmet",
+		"EsFormatter",
+		"FindKeyConflicts",
+		"Git",
+		"GitGutter",
+		"Handlebars",
+		"HTML5",
+		"JavaScript Completions",
+		"JavaScriptFunctionDefinition",
+		"JavaScriptNext - ES6 Syntax",
+		"jQuery",
+		"JSHint",
+		"KeymapEnhanced",
+		"Keymaps",
+		"Package Control",
+		"Predawn",
+		"Predawn Monokai",
+		"Sass",
+		"Seti_UI",
+		"Seti_UX",
+		"SideBarEnhancements",
+		"SyncedSideBar",
+		"Theme - Spacegray",
+		"TodoReview"
+	]
+}
