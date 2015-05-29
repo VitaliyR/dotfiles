@@ -16,6 +16,9 @@ brew tap homebrew/dupes
 bi $(<brew.txt)
 bup
 
+# NPM
+npm install -g $(<npm.txt)
+
 # Nano
 ln -s nano/.nanorc ~
 cd nano/nanorc
