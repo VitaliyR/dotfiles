@@ -1,0 +1,3 @@
+[submodule "nano/nanorc"]
+	path = nano/nanorc
+	url = https://github.com/nanorc/nanorc.git
