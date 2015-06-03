@@ -17,16 +17,18 @@ My configuration files for utilities which I'm using everyday.
  * some maven crappy alias
  * cool highlight of terminal output
 * Homebrew
- * For packages look into [brew.txt](.dotfiles/brew.txt)
+ * For packages look into [brew.txt](brew.txt)
+ * For casks look into [cask.txt](cask.txt)
 * Sublime
- * Settings are copied from [Preferences](.dotfiles/preferences.sublime-settings). Not symlink because there is a bug with that when you saving sublime settings into symlinked file.
- * Custom icon is located under [dotfiles](.dotfiles) directory. For now on - change is manually
+ * Settings are copied from [Preferences](sublime/Preferences.sublime-settings). Not symlink because there is a bug with that when you saving sublime settings into symlinked file.
+ * Custom icon is located under [sublime](sublime) directory. For now on - change is manually
 * NPM
  * Installs packages defined in [npm.txt](npm.txt) globally
 * Git config and global ignore
 * IntelliJ IDE exported settings
 * Nano syntax highlighter
 * iTerm color theme
+* OS X tweaks
 
 ## Installation
 ```
