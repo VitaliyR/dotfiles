@@ -1,6 +1,6 @@
-caskroom/cask/brew-cask
 bash-completion
 boost
+brew-cask
 ccze
 gdbm
 gettext
