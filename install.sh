@@ -4,7 +4,6 @@ cd ~/.dotfiles
 
 # Bash
 echo '. ~/.dotfiles/terminal/init.sh' >> ~/.profile
-open ~/.dotfiles/terminal/TomorrowNight.itermcolors
 
 # Git
 ln -s git/.gitconfig ~
@@ -15,6 +14,10 @@ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/
 brew tap homebrew/dupes
 bi $(<brew.txt)
 bup
+
+open ~/.dotfiles/terminal/TomorrowNight.itermcolors
+
+bci $(<cask.txt)
 
 # NPM
 npm install -g $(<npm.txt)
@@ -32,3 +35,5 @@ cp sublime/Default\ \(OSX\).sublime-keymap ~/Library/Application\ Support/Sublim
 
 echo 'Change sublime icon'
 echo 'Import IntelliJ settings'
+echo 'Install following applications from the AppStore:'
+cat appstore.txt

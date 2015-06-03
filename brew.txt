@@ -1,3 +1,4 @@
+caskroom/cask/brew-cask
 bash-completion
 boost
 ccze

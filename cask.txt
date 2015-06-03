@@ -1,0 +1,12 @@
+skype
+vlc
+java6
+phpstorm
+sublime-text
+sourcetree
+jeromelebel-mongohub
+sequel-pro
+iterm2
+firefox
+opera
+rescuetime
