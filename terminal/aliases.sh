@@ -99,6 +99,7 @@ alias sap="mvn clean install -PinstallPackage -Dmaven.test.skip=true"
 
 # Open Google Chrome with support CORS for file
 alias gc='open -a Google\ Chrome --args --disable-web-security'
+alias opera='open -a Opera --args --disable-web-security'
 
 # Java crap
 export JAVA_HOME=$(/usr/libexec/java_home)
