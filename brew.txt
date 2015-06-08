@@ -26,6 +26,7 @@ pcre
 pkg-config
 readline
 sqlite
+ssh-copy-id
 terminal-notifier
 unrar
 usbmuxd
