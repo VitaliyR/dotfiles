@@ -55,6 +55,10 @@ function manp {
   fi
 }
 
+function findword {
+  grep -rn ./ -e $1 --exclude-dir=\.git
+}
+
 # Extract any archive with single command
 # TODO - add extraction directories
 function extract {

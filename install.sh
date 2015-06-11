@@ -15,7 +15,7 @@ brew tap homebrew/dupes
 bi $(<brew.txt)
 bup
 
-open ~/.dotfiles/terminal/TomorrowNight.itermcolors
+open ~/.dotfiles/terminal/Solarized\ Dark.itermcolors
 
 bci $(<cask.txt)
 
