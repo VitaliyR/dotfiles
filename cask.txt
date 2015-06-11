@@ -1,6 +1,6 @@
 skype
 vlc
-java6
+java
 phpstorm
 sublime-text
 sourcetree
@@ -10,3 +10,4 @@ iterm2
 firefox
 opera
 rescuetime
+google-chrome
