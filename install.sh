@@ -4,6 +4,7 @@ cd ~/.dotfiles
 
 # Bash
 echo '. ~/.dotfiles/terminal/init.sh' >> ~/.profile
+. ~/.dotfiles/terminal/init.sh
 
 # Git
 ln -s git/.gitconfig ~
@@ -12,12 +13,13 @@ ln -s git/.gitignore_global ~
 # Homebrew
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 brew tap homebrew/dupes
+brew tap caskroom/cask
+bi brew-cask
+bci $(<cask.txt)
 bi $(<brew.txt)
 bup
 
 open ~/.dotfiles/terminal/Solarized\ Dark.itermcolors
-
-bci $(<cask.txt)
 
 # NPM
 npm install -g $(<npm.txt)
