@@ -68,6 +68,8 @@ function rmB {
   git branch | grep -v $1 | xargs git branch -D 
 }
 
+alias gr='git reset --hard'
+
 # Extract any archive with single command
 # TODO - add extraction directories
 function extract {
