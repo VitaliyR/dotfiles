@@ -15,11 +15,14 @@ alias cl='clear'
 alias lock='open -a /System/Library/Frameworks/ScreenSaver.framework/Versions/A/Resources/ScreenSaverEngine.app'
 
 # Bower & NPM
-alias ni='npm install'
-alias nis='npm install --save'
-alias nisd='npm install --save-dev'
-alias bi='bower install'
-alias bis='bower install --save'
+alias nii='npm install'
+alias niis='npm install --save'
+alias niisd='npm install --save-dev'
+alias ns='npm search'
+alias bii='bower install'
+alias biis='bower install --save'
+alias bs='bower search'
+alias bi='bower info'
 alias nbc='rm -rf {bower_components,node_modules} && npm install && bower install'
 
 alias ngre='sudo nginx -s stop && sudo nginx'
@@ -55,8 +58,14 @@ function manp {
   fi
 }
 
+# Find occurrences in current directory recursive
 function findword {
   grep -rn ./ -e $1 --exclude-dir=\.git
+}
+
+# Removes all branches except $1
+function rmB {
+  git branch | grep -v $1 | xargs git branch -D 
 }
 
 # Extract any archive with single command
@@ -110,11 +119,11 @@ export JAVA_HOME=$(/usr/libexec/java_home)
 export MAVEN_OPTS="-Xms256m -Xmx512m -XX:PermSize=64m -XX:MaxPermSize=256m -Djava.awt.headless=true"
 
 # Homebrew
-alias bup='brew update && brew upgrade --all'
-alias bout='brew outdated'
-alias bi='brew install'
-alias bl='brew list'
-alias bs='brew search'
-alias bci='brew cask install'
-alias bcl='brew cask list'
-alias bcs='brew cask search'
+alias brup='brew update && brew upgrade --all'
+alias brout='brew outdated'
+alias bri='brew install'
+alias brl='brew list'
+alias brs='brew search'
+alias brci='brew cask install'
+alias brcl='brew cask list'
+alias brcs='brew cask search'
