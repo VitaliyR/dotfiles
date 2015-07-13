@@ -1,5 +1,5 @@
 # bash completion, install via brew bash-completion
-if [ -f `brew --prefix`/etc/bash_completion ]; then
+if [[ "$OSTYPE" == darwin* ]] && [ -f `brew --prefix`/etc/bash_completion ]; then
     . `brew --prefix`/etc/bash_completion
 fi
 
@@ -116,9 +116,10 @@ alias sap="mvn clean install -PinstallPackage -Dmaven.test.skip=true"
 alias gc='open -a Google\ Chrome --args --disable-web-security'
 alias opera='open -a Opera --args --disable-web-security'
 
-# Java crap
-export JAVA_HOME=$(/usr/libexec/java_home)
-export MAVEN_OPTS="-Xms256m -Xmx512m -XX:PermSize=64m -XX:MaxPermSize=256m -Djava.awt.headless=true"
+if [[ "$OSTYPE" == darwin* ]]; then
+ export JAVA_HOME=$(/usr/libexec/java_home)
+ export MAVEN_OPTS="-Xms256m -Xmx512m -XX:PermSize=64m -XX:MaxPermSize=256m -Djava.awt.headless=true"
+fi
 
 # Homebrew
 alias brup='brew update && brew upgrade --all'
