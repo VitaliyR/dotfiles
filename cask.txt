@@ -11,3 +11,4 @@ firefox
 opera
 rescuetime
 google-chrome
+dash
