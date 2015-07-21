@@ -112,9 +112,12 @@ alias hcss="pbpaste | highlight --syntax=js -O rtf --font-size 24 --font Inconso
 # Alias for maven install for IDEA w/o Maven plugin
 alias sap="mvn clean install -PinstallPackage -Dmaven.test.skip=true"
 
-# Open Google Chrome with support CORS for file
+# Open GC or Opera with support CORS for file
 alias gc='open -a Google\ Chrome --args --disable-web-security'
 alias opera='open -a Opera --args --disable-web-security'
+
+# Open Editors
+alias sublime='open -a Sublime\ Text'
 
 if [[ "$OSTYPE" == darwin* ]]; then
  export JAVA_HOME=$(/usr/libexec/java_home)
@@ -130,3 +133,5 @@ alias brs='brew search'
 alias brci='brew cask install'
 alias brcl='brew cask list'
 alias brcs='brew cask search'
+
+alias fuck='eval $(thefuck $(fc -ln -1)); history -r'
