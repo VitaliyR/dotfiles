@@ -2,7 +2,7 @@ skype
 vlc
 java
 phpstorm
-sublime-text
+sublime-text3
 sourcetree
 jeromelebel-mongohub
 sequel-pro

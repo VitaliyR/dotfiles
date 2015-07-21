@@ -40,3 +40,4 @@ vault-cli
 watchman
 wget
 xz
+thefuck

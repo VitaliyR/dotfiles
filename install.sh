@@ -14,6 +14,7 @@ ln -s git/.gitignore_global ~
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 brew tap homebrew/dupes
 brew tap caskroom/cask
+brew tap caskroom/versions
 bi brew-cask
 bci $(<cask.txt)
 bi $(<brew.txt)
