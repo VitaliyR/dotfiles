@@ -7,10 +7,11 @@
 		"ApplySyntax",
 		"Autoprefixer",
 		"Better CoffeeScript",
+		"BracketHighlighter",
 		"Color Highlighter",
 		"ColorPicker",
-		"CQ Clientlibs Syntax Highlight",
 		"CSS3",
+		"Darkula Color Scheme",
 		"DocBlockr",
 		"Dracula Color Scheme",
 		"EditorConfig",
@@ -30,6 +31,7 @@
 		"JSHint",
 		"KeymapEnhanced",
 		"Keymaps",
+		"Material Theme",
 		"Package Control",
 		"Predawn",
 		"Predawn Monokai",
@@ -39,6 +41,7 @@
 		"SideBarEnhancements",
 		"SyncedSideBar",
 		"Theme - Spacegray",
-		"TodoReview"
+		"TodoReview",
+		"Tomorrow Color Schemes"
 	]
 }
