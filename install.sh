@@ -20,7 +20,7 @@ bci $(<cask.txt)
 bi $(<brew.txt)
 bup
 
-open ~/.dotfiles/terminal/Solarized\ Dark.itermcolors
+open ~/.dotfiles/terminal/Tomorrow\ Night\ Bright.itermcolors
 
 # NPM
 npm install -g $(<npm.txt)
