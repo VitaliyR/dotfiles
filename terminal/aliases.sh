@@ -63,12 +63,28 @@ function findword {
   grep -rn ./ -e $1 --exclude-dir=\.git
 }
 
+# Count of files
+function fcount {
+  if [ -z "$1" ]
+  then
+    find . | wc -l
+  else
+    find $1 | wc -l
+  fi
+}
+
+# Git
+
 # Removes all branches except $1
 function rmB {
   git branch | grep -v $1 | xargs git branch -D 
 }
 
 alias gr='git reset --hard'
+alias gc='git checkout'
+alias ga='git add .'
+alias gs='git status'
+alias gd='git diff'
 
 # Extract any archive with single command
 # TODO - add extraction directories
@@ -113,7 +129,7 @@ alias hcss="pbpaste | highlight --syntax=js -O rtf --font-size 24 --font Inconso
 alias sap="mvn clean install -PinstallPackage -Dmaven.test.skip=true"
 
 # Open GC or Opera with support CORS for file
-alias gc='open -a Google\ Chrome --args --disable-web-security'
+alias ggc='open -a Google\ Chrome --args --disable-web-security'
 alias opera='open -a Opera --args --disable-web-security'
 
 # Open Editors

@@ -1,6 +1,6 @@
 [user]
-  name = Vitaliy Ribachenko
-  email = vit@ribachenko.com
+	name = Vitaliy Ribachenko
+	email = vit@ribachenko.com
 
 [github]
   user = vitaliyr
@@ -12,7 +12,7 @@
   ui = true
 
 [core]
-  excludesfile = ~/.gitignore
+	excludesfile = /Users/salen/.gitignore_global
 	editor = nano
 	autocrlf = input
 
