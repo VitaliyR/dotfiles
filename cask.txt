@@ -12,3 +12,4 @@ opera
 rescuetime
 google-chrome
 dash
+gitter
