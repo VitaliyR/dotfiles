@@ -85,6 +85,7 @@ alias gc='git checkout'
 alias ga='git add .'
 alias gs='git status'
 alias gd='git diff'
+alias gl='git log'
 
 # Extract any archive with single command
 # TODO - add extraction directories
