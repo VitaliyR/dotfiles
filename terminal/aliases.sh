@@ -77,7 +77,12 @@ function fcount {
 
 # Removes all branches except $1
 function rmB {
-  git branch | grep -v $1 | xargs git branch -D 
+  git branch | grep -v $1 | xargs git branch -D
+}
+
+# Removes files by received glob
+function rmfiles {
+  find . -name $1 -print0 | xargs -0 rm
 }
 
 alias gr='git reset --hard'
