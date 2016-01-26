@@ -58,6 +58,11 @@ function manp {
   fi
 }
 
+# Open PhpStorm
+function phpstorm {
+  open -a "PhpStorm" $@
+}
+
 # Find occurrences in current directory recursive
 function findword {
   grep -rn ./ -e $1 --exclude-dir=\.git
@@ -78,6 +83,10 @@ function fcount {
 # Removes all branches except $1
 function rmB {
   git branch | grep -v $1 | xargs git branch -D
+}
+
+function gu {
+  git reset --soft HEAD~
 }
 
 # Removes files by received glob
@@ -124,6 +133,10 @@ function extract {
         echo "$1 - file does not exist"
     fi
 fi
+}
+
+function exuadownload {
+ wget $1 -e use_proxy=yes -e http_proxy=77.47.137.232:3128
 }
 
 # Code Highlight
