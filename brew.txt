@@ -33,3 +33,4 @@ unrar
 usbmuxd
 watchman
 wget
+nmap
