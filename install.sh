@@ -10,9 +10,6 @@ echo '. ~/.dotfiles/terminal/init.sh' >> ~/.profile
 ln -s git/.gitconfig ~
 ln -s git/.gitignore_global ~
 
-# NPM
-ln -s .npmrc ~/.npmrc
-
 # Homebrew
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 brew tap homebrew/dupes
@@ -26,6 +23,7 @@ bup
 open ~/.dotfiles/terminal/Tomorrow\ Night\ Bright.itermcolors
 
 # NPM
+cat .npmrc >> ~/.npmrc
 npm install -g $(<npm.txt)
 
 # Nano
