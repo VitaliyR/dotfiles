@@ -34,3 +34,4 @@ usbmuxd
 watchman
 wget
 nmap
+mongodb
