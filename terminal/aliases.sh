@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 # bash completion, install via brew bash-completion
 if [[ "$OSTYPE" == darwin* ]] && [ -f `brew --prefix`/etc/bash_completion ]; then
     . `brew --prefix`/etc/bash_completion
@@ -170,3 +171,92 @@ alias brcl='brew cask list'
 alias brcs='brew cask search'
 
 alias fuck='eval $(thefuck $(fc -ln -1)); history -r'
+
+# git checkout recursive
+#GITCHECKOUT_EXCLUDE
+function gitcheckout {
+    local cwd=$(pwd)
+    local directories=$(find . -name '.git' -type d)
+    local defaultBranch='master'
+    local branch
+    local foundBranch
+    local force=false
+    local update=true
+
+    while [ ! $# -eq 0 ]
+    do
+        case "$1" in
+            -f)
+                force=true
+                ;;
+            -u)
+                update=false
+                ;;
+            -d)
+                defaultBranch=d
+                ;;
+            -h)
+                echo 'Usage: -f[reset hard] -u[disable fetch] -d[default branch:master] -h[print help] BRANCH_NAME'
+                return
+                ;;
+            *)
+                branch=$1
+                ;;
+        esac
+        shift
+    done
+
+    if [ -z $branch ]; then
+        branch=$defaultBranch
+    fi
+
+    echo 'Updating repositories to' $branch
+    echo 'Force:' $force '   Fetch:' $update
+
+    for REPO in $directories
+    do
+#        if exclude
+        cd $REPO/../
+
+        echo 'Updating' ${PWD##*/}
+        echo ''
+
+        if [ $force == 'true' ]; then
+            git reset --hard
+        else
+            git reset
+        fi
+
+        if [ $update == 'true' ]; then
+            git fetch
+        fi
+
+        foundBranch=$(git branch -r | grep -w -E '^. (origin/'$branch')$')
+
+        if [ -n "$foundBranch" ]
+        then
+            echo 'Found' $branch
+            git checkout $branch
+        else
+            echo 'Not found' $branch 'Updating to' $defaultBranch
+            git checkout $defaultBranch
+        fi
+
+        if [ $update == 'true' ]; then
+            git pull
+        fi
+
+        echo ''
+        echo ''
+
+        cd $cwd
+    done
+}
+
+function cliocheckout {
+    cd ~/hostroot
+    gitcheckout $1
+    cd clioui
+    grunt
+    echo 'You are awesome at' $1
+}
