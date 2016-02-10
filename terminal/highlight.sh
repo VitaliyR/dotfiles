@@ -6,6 +6,24 @@ export CLICOLOR=1
 export LSCOLORS=ExFxCxDxBxegedabagacad
 export LESS='-R'
 
+export COLOR_NC='\x1B[0m' # No Color
+export COLOR_WHITE='\x1B[1;37m'
+export COLOR_BLACK='\x1B[0;30m'
+export COLOR_BLUE='\x1B[0;34m'
+export COLOR_LIGHT_BLUE='\x1B[1;34m'
+export COLOR_GREEN='\x1B[0;32m'
+export COLOR_LIGHT_GREEN='\x1B[1;32m'
+export COLOR_CYAN='\x1B[0;36m'
+export COLOR_LIGHT_CYAN='\x1B[1;36m'
+export COLOR_RED='\x1B[0;31m'
+export COLOR_LIGHT_RED='\x1B[1;31m'
+export COLOR_PURPLE='\x1B[0;35m'
+export COLOR_LIGHT_PURPLE='\x1B[1;35m'
+export COLOR_BROWN='\x1B[0;33m'
+export COLOR_YELLOW='\x1B[1;33m'
+export COLOR_GRAY='\x1B[0;30m'
+export COLOR_LIGHT_GRAY='\x1B[0;37m'
+
 # @gf3’s Sexy Bash Prompt, inspired by “Extravagant Zsh Prompt”
 # Shamelessly copied from https://github.com/gf3/dotfiles
 # And not only by me. Actually I found it on the stackoverflow :)
