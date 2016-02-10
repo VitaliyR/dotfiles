@@ -172,16 +172,17 @@ alias brcs='brew cask search'
 
 alias fuck='eval $(thefuck $(fc -ln -1)); history -r'
 
-# git checkout recursive
-#GITCHECKOUT_EXCLUDE
+# git checkout recursive repositories in current directory and sub directories
 function gitcheckout {
-    local cwd=$(pwd)
-    local directories=$(find . -name '.git' -type d)
     local defaultBranch='master'
     local branch
     local foundBranch
     local force=false
     local update=true
+    local verbose=false
+    local exclude
+    local errors=''
+    local output
 
     while [ ! $# -eq 0 ]
     do
@@ -195,8 +196,15 @@ function gitcheckout {
             -d)
                 defaultBranch=d
                 ;;
+            -e)
+                exclude=$2
+                shift
+                ;;
+            -v)
+                verbose=true
+                ;;
             -h)
-                echo 'Usage: -f[reset hard] -u[disable fetch] -d[default branch:master] -h[print help] BRANCH_NAME'
+                echo 'Usage: -f[reset hard] -u[disable fetch] -d[default branch:master] -e[exclude regexp] -v[verbose log] -h[print help] BRANCH_NAME'
                 return
                 ;;
             *)
@@ -206,57 +214,113 @@ function gitcheckout {
         shift
     done
 
+    echo 'Searching for repositories'
+
+    local cwd=$(pwd)
+    local directories=$(find . -name '.git' -type d)
+
     if [ -z $branch ]; then
         branch=$defaultBranch
     fi
 
-    echo 'Updating repositories to' $branch
-    echo 'Force:' $force '   Fetch:' $update
+    echo ''
+    echo -e '\x1B[4mUpdating repositories to' $branch '\x1B[24m'
+    echo -e '\x1B[4mForce\x1B[24m:' $force '  \x1B[4mFetch\x1B[24m:' $update '  \x1B[4mDefault branch\x1B[24m:' $defaultBranch '\x1B[24m'
+    if [ ! -z "$exclude" ]; then
+        echo -e '\x1B[4mExclude\x1B[24m:' $exclude
+    fi
+    echo ''
 
     for REPO in $directories
     do
-#        if exclude
         cd $REPO/../
 
-        echo 'Updating' ${PWD##*/}
+        local repoPWD=$(pwd)
+
+        if [ ! -z "$exclude" ] &&  [[ $repoPWD =~ $exclude ]]; then
+            echo -e '\x1B[93mSkipping' ${PWD##*/} '\x1B[0m'
+            echo ''
+            echo ''
+
+            cd $cwd
+            continue
+        fi
+
+        echo -e '\x1B[4mUpdating' ${PWD##*/}'\x1B[24m'
         echo ''
 
         if [ $force == 'true' ]; then
-            git reset --hard
+            output=$(git reset --hard 2>&1)
         else
-            git reset
+            output=$(git reset 2>&1)
+        fi
+
+        if [ $verbose == 'true' ]; then
+            echo -e "$output"
         fi
 
         if [ $update == 'true' ]; then
-            git fetch
+            output=$(git fetch 2>&1)
+
+            if [ $? -ne 0 ]; then
+                echo -e "$output"
+                errors+=$(echo 'Fetching\x1B[1m' ${PWD##*/} '\x1B[0m\n')
+            else
+                if [ $verbose == 'true' ]; then
+                  echo -e "$output"
+                fi
+            fi
         fi
 
         foundBranch=$(git branch -r | grep -w -E '^. (origin/'$branch')$')
 
-        if [ -n "$foundBranch" ]
-        then
-            echo 'Found' $branch
-            git checkout $branch
+        if [ -n "$foundBranch" ]; then
+            echo -e '\x1B[92mFound' $branch '\x1B[39m'
+            output=$(git checkout $branch 2>&1)
         else
-            echo 'Not found' $branch 'Updating to' $defaultBranch
-            git checkout $defaultBranch
+            echo -e '\x1B[91mNot found' $branch 'Updating to' $defaultBranch '\x1B[39m'
+            output=$(git checkout $defaultBranch 2>&1)
+        fi
+
+        if [ $? -ne 0 ]; then
+            echo -e "$output"
+            errors+=$(echo 'Checkout\x1B[1m' ${PWD##*/} '\x1B[0m\n')
+        else
+            if [ $verbose == 'true' ]; then
+                echo -e "$output"
+            fi
         fi
 
         if [ $update == 'true' ]; then
-            git pull
+            output=$(git pull 2>&1)
+
+            if [ $? -ne 0 ]; then
+                echo -e "$output"
+                errors+=$(echo 'Pull\x1B[1m' ${PWD##*/} '\x1B[0m\n')
+            else
+                if [ $verbose == 'true' ]; then
+                    echo -e "$output"
+                fi
+            fi
         fi
 
-        echo ''
         echo ''
 
         cd $cwd
     done
+
+    if [ ! -z "$errors" ]; then
+        echo -e '\x1B[91m\x1B[4mErrors with repositories:\x1B[24m\x1B[39m'
+        echo -e "$errors"
+    fi
 }
 
 function cliocheckout {
     cd ~/hostroot
-    gitcheckout $1
-    cd clioui
+    gitcheckout -e 'Packages\/((Framework)|(Libraries))' $@
+    cd flow
+    ./flow doctrine:update
+    ./flow translation:generatejson
+    cd ../clioui
     grunt
-    echo 'You are awesome at' $1
 }
