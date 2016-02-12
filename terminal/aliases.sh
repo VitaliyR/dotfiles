@@ -224,7 +224,7 @@ function gitcheckout {
     fi
 
     echo ''
-    echo -e '\x1B[4mUpdating repositories to' $branch '\x1B[24m'
+    echo -e '\x1B[4mUpdating repositories to' $branch'\x1B[24m'
     echo -e '\x1B[4mForce\x1B[24m:' $force '  \x1B[4mFetch\x1B[24m:' $update '  \x1B[4mDefault branch\x1B[24m:' $defaultBranch '\x1B[24m'
     if [ ! -z "$exclude" ]; then
         echo -e '\x1B[4mExclude\x1B[24m:' $exclude

@@ -24,6 +24,13 @@ export COLOR_YELLOW='\x1B[1;33m'
 export COLOR_GRAY='\x1B[0;30m'
 export COLOR_LIGHT_GRAY='\x1B[0;37m'
 
+export COLOR_BOLD='\x1B[0;1m'
+export COLOR_DIM='\x1B[0;2m'
+export COLOR_UNDERLINE='\x1B[0;4m'
+export COLOR_BLINK='\x1B[0;5m'
+export COLOR_INVERT='\x1B[0;7m'
+export COLOR_HIDDEN='\x1B[0;8m'
+
 # @gf3’s Sexy Bash Prompt, inspired by “Extravagant Zsh Prompt”
 # Shamelessly copied from https://github.com/gf3/dotfiles
 # And not only by me. Actually I found it on the stackoverflow :)
