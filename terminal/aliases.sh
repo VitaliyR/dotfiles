@@ -87,7 +87,7 @@ function rmB {
 }
 
 function gu {
-  git reset --soft HEAD~
+  git reset --soft HEAD
 }
 
 # Removes files by received glob
@@ -143,7 +143,8 @@ function exuadownload {
 # Code Highlight
 alias hjs="pbpaste | highlight --syntax=js -O rtf --font-size 24 --font Inconsolata --style solarized-dark | pbcopy"
 alias hhtml="pbpaste | highlight --syntax=js -O rtf --font-size 24 --font Inconsolata --style solarized-dark | pbcopy"
-alias hcss="pbpaste | highlight --syntax=js -O rtf --font-size 24 --font Inconsolata --style solarized-dark | pbcopy"
+alias hobjc="pbpaste | highlight --syntax=objc -O rtf --font-size 24 --font Inconsolata --style solarized-dark | pbcopy"
+alias hswift="pbpaste | highlight --syntax=swift -O rtf --font-size 24 --font Inconsolata --style solarized-dark | pbcopy"
 
 # Alias for maven install for IDEA w/o Maven plugin
 alias sap="mvn clean install -PinstallPackage -Dmaven.test.skip=true"
