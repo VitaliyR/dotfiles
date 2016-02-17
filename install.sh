@@ -34,6 +34,13 @@ cd nano/nanorc
 make install
 cd ../../
 
+# MC
+if [[ "$OSTYPE" == darwin* ]]; then
+    ln -s ~/.profile .local/share/mc/bashrc
+else
+    ln -s ~/.bash_profile .local/share/mc/bashrc
+fi
+
 # Sublime
 cp sublime/Preferences.sublime-settings  ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User/Preferences.sublime-settings
 cp sublime/Package\ Control.sublime-settings ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User/Package\ Control.sublime-settings
