@@ -65,6 +65,8 @@ function hh {
     echo -e "$COLOR_BOLD""hjs""$COLOR_NC"" - JS"
     echo -e "$COLOR_BOLD""hhtml""$COLOR_NC"" - HTML"
     echo -e "$COLOR_BOLD""hcss""$COLOR_NC"" - CSS"
+    echo -e "$COLOR_BOLD""hswift""$COLOR_NC"" - Swift"
+    echo -e "$COLOR_BOLD""hobjc""$COLOR_NC"" - ObjC"
     echo
     echo
     echo -e "$COLOR_LIGHT_GREEN"Colors"$COLOR_NC"
