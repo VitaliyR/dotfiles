@@ -6,6 +6,9 @@ cd ~/.dotfiles
 echo '. ~/.dotfiles/terminal/init.sh' >> ~/.profile
 . ~/.dotfiles/terminal/init.sh
 
+# Scripts
+ln -s ~/.dotfiles/terminal/imgcat.sh /usr/local/bin/imgcat
+
 # Git
 ln -s git/.gitconfig ~
 ln -s git/.gitignore_global ~
