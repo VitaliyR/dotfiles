@@ -2,7 +2,7 @@
 	"always_show_minimap_viewport": true,
 	"bold_folder_labels": true,
 	"caret_style": "phase",
-	"color_scheme": "Packages/Darkula Color Scheme/darkula.tmTheme",
+	"color_scheme": "Packages/User/SublimeLinter/Otto Oceanic (SL).tmTheme",
 	"draw_minimap_border": true,
 	"ensure_newline_at_eof_on_save": false,
 	"file_exclude_patterns":
@@ -21,32 +21,38 @@
 		".idea",
 		".sass-cache"
 	],
-	"font_face": "Source Code Pro",
+	"font_face": "Menlo",
 	"font_options":
 	[
+		"no_round"
 	],
-	"font_size": 14,
+	"font_size": 13,
 	"highlight_line": true,
 	"highlight_modified_tabs": true,
 	"ignored_packages":
 	[
-		"CSS",
+		"Better CoffeeScript",
+		"Dracula Color Scheme",
+		"Ember.js Snippets",
+		"Emblem.js Syntax Highlighting",
+		"FindKeyConflicts",
+		"HTML5",
+		"KeymapEnhanced",
 		"Vintage"
 	],
-	"indent_guide_options":
-	[
-		"draw_normal",
-		"draw_active"
-	],
+	"line_padding_bottom": 3,
+	"line_padding_top": 3,
+	"lint_mode": "background",
 	"material_theme_small_statusbar": true,
 	"material_theme_small_tab": true,
 	"overlay_scroll_bars": "enabled",
-	"reveal-on-activate": false,
-	"save_on_focus_lost": false,
+	"save_on_focus_lost": true,
 	"side_bar_width": 210,
 	"tab_size": 2,
 	"tabs_small": true,
-	"theme": "Material-Theme-Darker.sublime-theme",
+	"theme": "Otto Oceanic.sublime-theme",
+	"theme_otto_global_ui_small": true,
+	"theme_otto_tab_selected_underlined": true,
 	"translate_tabs_to_spaces": true,
 	"trim_trailing_white_space_on_save": true,
 	"word_wrap": true
