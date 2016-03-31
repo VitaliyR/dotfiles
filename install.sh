@@ -45,9 +45,11 @@ else
 fi
 
 # Sublime
-cp sublime/Preferences.sublime-settings  ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User/Preferences.sublime-settings
-cp sublime/Package\ Control.sublime-settings ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User/Package\ Control.sublime-settings
-cp sublime/Default\ \(OSX\).sublime-keymap ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User/Default\ \(OSX\).sublime-keymap
+cd ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User/
+ln -s ~/.dotfiles/sublime/Preferences.sublime-settings
+ln -s ~/.dotfiles/sublime/Package\ Control.sublime-settings
+ln -s ~/.dotfiles/sublime/Default\ \(OSX\).sublime-keymap
+cd ~/.dotfiles
 
 # OS X
 . etc/osx.sh

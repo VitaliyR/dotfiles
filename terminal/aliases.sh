@@ -66,7 +66,7 @@ function phpstorm {
 
 # Find occurrences in current directory recursive
 function findword {
-  grep -rn ./ -e $1 --exclude-dir=\.git
+  grep -rn ./ -e $1 --exclude-dir='(\.git)|(node_modules)'
 }
 
 # Count of files
