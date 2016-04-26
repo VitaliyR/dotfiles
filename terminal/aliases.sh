@@ -6,6 +6,8 @@ fi
 
 LANG=en_US.UTF-8
 
+alias egrep='egrep --color=auto'
+
 # CD to Homedir. Yes, too lazy to move fingers to ~
 alias cdh='cd ~'
 
