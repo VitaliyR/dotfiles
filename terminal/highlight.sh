@@ -1,5 +1,5 @@
 # Coloring the output of grep, less, ls
-export GREP_OPTIONS='--color=always'
+export GREP_OPTIONS='--color=auto'
 export GREP_COLOR='01;34;04'
 export CLICOLOR_FORCE=true
 export CLICOLOR=1
