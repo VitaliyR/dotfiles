@@ -1,7 +1,9 @@
+#!/usr/bin/env bash
+
 DOTFILES_BASEDIR=$(pwd)
 
 if [ ! -d ".dotfiles" ]; then
-	DOTFILES_BASEDIR='~'
+	DOTFILES_BASEDIR=~
 fi
 
 . $DOTFILES_BASEDIR/.dotfiles/terminal/highlight.sh
