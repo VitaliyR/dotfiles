@@ -98,7 +98,9 @@ function rmfiles {
 }
 
 alias gr='git reset --hard'
-alias gc='git checkout'
+function gc {
+	git checkout -b $1 --track origin/$1
+}
 alias ga='git add .'
 alias gs='git status'
 alias gd='git diff'
