@@ -4,4 +4,4 @@
 . ~/.dotfiles/git/git-completion.sh
 
 export EDITOR=nano
-export PATH=$PATH:./node_modules/.bin
+export PATH=$PATH:~/.nodebrew/current/bin:./node_modules/.bin
