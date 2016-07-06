@@ -38,12 +38,14 @@ export COLOR_HIDDEN='\x1B[0;8m'
 
 if [[ $COLORTERM = gnome-* && $TERM = xterm ]] && infocmp gnome-256color >/dev/null 
 2>&1; then
-  export TERM=gnome-256color
+  if [ $TERM != cygwin ]; then
+    export TERM=gnome-256color
+  fi
 elif infocmp xterm-256color >/dev/null 2>&1; then
   export TERM=xterm-256color
 fi
 
-if tput setaf 1 &> /dev/null; then
+if [ $TERM != cygwin ] && tput setaf 1 &> /dev/null; then
   tput sgr0
   if [[ $(tput colors) -ge 256 ]] 2>/dev/null; then
     # Changed these colors to fit Solarized theme
