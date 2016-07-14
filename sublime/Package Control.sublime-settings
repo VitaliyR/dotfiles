@@ -5,9 +5,11 @@
 	],
 	"installed_packages":
 	[
+		"Boxy Theme",
 		"BracketHighlighter",
 		"Color Highlighter",
 		"ColorPicker",
+		"Colorsublime",
 		"CSS3",
 		"Darkula Color Scheme",
 		"DocBlockr",
@@ -21,13 +23,13 @@
 		"LoremIpsum",
 		"Material Theme",
 		"nginx",
+		"Oceanic Next Color Scheme",
 		"Package Control",
 		"Sass",
 		"SideBarEnhancements",
 		"SublimeCodeIntel",
 		"SublimeLinter",
 		"SublimeLinter-jshint",
-		"Theme - Otto",
 		"Tomorrow Color Schemes"
 	]
 }

@@ -71,6 +71,11 @@ function findword {
   grep -rn ./ -e $1 --exclude-dir='(\.git)|(node_modules)'
 }
 
+# Find occurenses in files
+function findwordin {
+ find ./ -name $1 | xargs grep $2
+}
+
 # Count of files
 function fcount {
   if [ -z "$1" ]
@@ -161,7 +166,7 @@ alias opera='open -a Opera --args --disable-web-security'
 alias sublime='open -a Sublime\ Text'
 
 if [[ "$OSTYPE" == darwin* ]]; then
- export JAVA_HOME=$(/usr/libexec/java_home)
+ export JAVA_HOME=/Library/Internet\ Plug-Ins/JavaAppletPlugin.plugin/Contents/Home
  export MAVEN_OPTS="-Xms256m -Xmx512m -XX:PermSize=64m -XX:MaxPermSize=256m -Djava.awt.headless=true"
 fi
 

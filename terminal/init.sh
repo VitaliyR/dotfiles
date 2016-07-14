@@ -8,8 +8,9 @@ fi
 
 . $DOTFILES_BASEDIR/.dotfiles/terminal/highlight.sh
 . $DOTFILES_BASEDIR/.dotfiles/terminal/aliases.sh
+. $DOTFILES_BASEDIR/.dotfiles/terminal/extras.sh
 . $DOTFILES_BASEDIR/.dotfiles/terminal/help.sh
 . $DOTFILES_BASEDIR/.dotfiles/git/git-completion.sh
 
 export EDITOR=nano
-export PATH=$PATH:./node_modules/.bin
+export PATH=$PATH:$HOME/.nodebrew/current/bin:./node_modules/.bin

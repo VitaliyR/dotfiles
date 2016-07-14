@@ -2,7 +2,7 @@
 	"always_show_minimap_viewport": true,
 	"bold_folder_labels": true,
 	"caret_style": "phase",
-	"color_scheme": "Packages/User/SublimeLinter/Otto Oceanic (SL).tmTheme",
+	"color_scheme": "Packages/User/SublimeLinter/Oceanic_Next (SL).tmTheme",
 	"draw_minimap_border": true,
 	"ensure_newline_at_eof_on_save": false,
 	"file_exclude_patterns":
@@ -50,7 +50,7 @@
 	"side_bar_width": 210,
 	"tab_size": 2,
 	"tabs_small": true,
-	"theme": "Otto Oceanic.sublime-theme",
+	"theme": "Oceanic Next.sublime-theme",
 	"theme_otto_global_ui_small": true,
 	"theme_otto_tab_selected_underlined": true,
 	"translate_tabs_to_spaces": true,
