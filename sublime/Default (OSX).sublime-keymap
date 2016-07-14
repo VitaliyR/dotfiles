@@ -6,5 +6,8 @@
   { "keys": ["super+shift+d"], "command": "find_under_expand" },
   { "keys": ["super+d"], "command": "duplicate_line" },
 
-  { "keys": ["ctrl+shift+a"], "command": "git_blame" }
+  { "keys": ["ctrl+shift+a"], "command": "git_blame" },
+
+  { "keys": ["super+l"], "command": "reindent", "args": {"single_line": true} },
+  { "keys": ["super+alt+l"], "command": "reindent", "args": {"single_line": false} }
 ]
