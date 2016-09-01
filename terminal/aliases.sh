@@ -30,6 +30,9 @@ alias nbc='rm -rf {bower_components,node_modules} && npm install && bower instal
 
 alias ngre='sudo nginx -s stop && sudo nginx'
 
+# System
+alias cpu='ps -eo pcpu,pid,user,args | sort -k 1 -r | head -10'
+
 # Removes unnecessary files like ._ or .DS_Store.
 # Using for clearing flash drive for my car
 function ru {
