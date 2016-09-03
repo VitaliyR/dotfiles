@@ -14,9 +14,6 @@ alias cdh='cd ~'
 # Clearing the output
 alias cl='clear'
 
-# Lock the system with screensaver
-alias lock='open -a /System/Library/Frameworks/ScreenSaver.framework/Versions/A/Resources/ScreenSaverEngine.app'
-
 # Bower & NPM
 alias nii='npm install'
 alias niis='npm install --save'
@@ -32,6 +29,9 @@ alias ngre='sudo nginx -s stop && sudo nginx'
 
 # System
 alias cpu='ps -eo pcpu,pid,user,args | sort -k 1 -r | head -10'
+alias mtr='/usr/local/Cellar/mtr/0.86/sbin/mtr'
+# Lock the system with screensaver
+alias lock='open -a /System/Library/Frameworks/ScreenSaver.framework/Versions/A/Resources/ScreenSaverEngine.app'
 
 # Removes unnecessary files like ._ or .DS_Store.
 # Using for clearing flash drive for my car
