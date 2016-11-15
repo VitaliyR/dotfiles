@@ -13,4 +13,4 @@ fi
 . $DOTFILES_BASEDIR/.dotfiles/git/git-completion.sh
 
 export EDITOR=nano
-export PATH=$PATH:$HOME/.nodebrew/current/bin:./node_modules/.bin
+export PATH=$PATH:$HOME/.nodebrew/current/bin:./node_modules/.bin:$HOME/.ruby/bin
