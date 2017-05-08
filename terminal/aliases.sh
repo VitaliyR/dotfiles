@@ -172,6 +172,7 @@ if [[ "$OSTYPE" == darwin* ]]; then
  export JAVA_HOME=/Library/Internet\ Plug-Ins/JavaAppletPlugin.plugin/Contents/Home
  export MAVEN_OPTS="-Xms256m -Xmx512m -XX:PermSize=64m -XX:MaxPermSize=256m -Djava.awt.headless=true"
  export GEM_HOME=$HOME/.ruby
+ export DEVELOPER_DIR="/Applications/Xcode.app/Contents/Developer"
 fi
 
 # Homebrew
