@@ -14,3 +14,4 @@ fi
 
 export EDITOR=nano
 export PATH=$PATH:$HOME/.nodebrew/current/bin:./node_modules/.bin:$HOME/.ruby/bin
+ssh-add -K ~/.ssh/id_rsa
