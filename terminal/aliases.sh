@@ -33,6 +33,9 @@ alias mtr='/usr/local/Cellar/mtr/0.86/sbin/mtr'
 # Lock the system with screensaver
 alias lock='open -a /System/Library/Frameworks/ScreenSaver.framework/Versions/A/Resources/ScreenSaverEngine.app'
 
+# Start web server
+alias server='python -m SimpleHTTPServer 8000'
+
 # Removes unnecessary files like ._ or .DS_Store.
 # Using for clearing flash drive for my car
 function ru {
