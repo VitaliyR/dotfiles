@@ -13,6 +13,7 @@ function hh {
     echo -e "$COLOR_BOLD""rmfiles""$COLOR_NC"" - removes files by provided USD1 glob"
     echo -e "$COLOR_BOLD""extract""$COLOR_NC"" - unarchive any archive. TODO: Still not working properly    "
     echo -e "$COLOR_BOLD""manp""$COLOR_NC"" - man in Preview.app"
+    echo -e "$COLOR_BOLD""server""$COLOR_NC"" - start simple HTTP server in current directory"
     echo
     echo
     echo -e "$COLOR_LIGHT_GREEN""Apps"
