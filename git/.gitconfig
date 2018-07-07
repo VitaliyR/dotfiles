@@ -15,6 +15,7 @@
 	excludesfile = /Users/salen/.gitignore_global
 	editor = nano
 	autocrlf = input
+	pager = diff-so-fancy | less --tabs=4 -RFX
 
 [format]
   pretty = %Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset
