@@ -28,7 +28,6 @@ open ~/.dotfiles/terminal/Solarized\ Dark.itermcolors
 open ~/.dotfiles/terminal/Personal.itermcolors
 
 # NPM
-cat .npmrc >> ~/.npmrc
 npm install -g $(<npm.txt)
 
 # Nano
