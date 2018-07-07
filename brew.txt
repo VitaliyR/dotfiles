@@ -1,7 +1,9 @@
 bash-completion
+bat
+bfg
 boost
-brew-cask
 ccze
+diff-so-fancy
 freetds
 gdbm
 gettext
@@ -10,6 +12,8 @@ glib
 highlight
 ios-webkit-debug-proxy
 jq
+lame
+libevent
 libffi
 libimobiledevice
 libplist
@@ -40,6 +44,7 @@ sqlite
 ssh-copy-id
 terminal-notifier
 thefuck
+transmission
 unixodbc
 unrar
 usbmuxd
