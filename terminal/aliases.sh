@@ -342,3 +342,5 @@ function cliocheckout {
     cd ../clioui
     grunt
 }
+
+alias cat='bat'
