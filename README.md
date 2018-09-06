@@ -19,13 +19,7 @@ My configuration files for utilities which I'm using everyday.
 * Homebrew
  * For packages look into [brew.txt](brew.txt)
  * For casks look into [cask.txt](cask.txt)
-* Sublime
- * Settings are copied from [Preferences](sublime/Preferences.sublime-settings). Not symlink because there is a bug with that when you saving sublime settings into symlinked file.
- * Custom icon is located under [sublime](sublime) directory. For now on - change is manually
-* NPM
- * Installs packages defined in [npm.txt](npm.txt) globally
 * Git config and global ignore
-* IntelliJ IDE exported settings
 * Nano syntax highlighter
 * iTerm color theme
 * OS X tweaks
@@ -33,15 +27,6 @@ My configuration files for utilities which I'm using everyday.
 ## Installation
 ```
 cd ~ && git clone --recursive git://github.com/vitaliyr/dotfiles.git ~/.dotfiles && sh ~/.dotfiles/install.sh
-```
-* Change icon for the SublimeText
-* Import settings for IntelliJ
-
-## Packing
-Because I can't link Sublime configs (weird bug - when they're linked, you can't change settings from sublime) there is a [pack.sh](pack.sh) script which generally copies sublime 
-settings to working directory of dotfiles repository after what you can commit them. Also I'm put there brew 'backup'.
-```
-sh pack.sh
 ```
 
 ## Thanks
@@ -51,7 +36,7 @@ sh pack.sh
 ## License
 The MIT License (MIT)
 
-Copyright (c) 2015 Vitaliy Ribachenko ([http://ribachenko.com](http://ribachenko.com))
+Copyright (c) 2018 Vitaliy Ribachenko ([http://ribachenko.com](http://ribachenko.com))
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

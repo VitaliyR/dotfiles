@@ -10,8 +10,8 @@ echo '. ~/.dotfiles/terminal/init.sh' >> ~/.profile
 ln -s ~/.dotfiles/terminal/imgcat.sh /usr/local/bin/imgcat
 
 # Git
-ln -s git/.gitconfig ~
-ln -s git/.gitignore_global ~
+ln -s $(pwd)/git/.gitconfig ~/.gitconfig
+ln -s $(pwd)/git/.gitignore_global ~/.gitignore_global
 
 # Homebrew
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
@@ -27,9 +27,6 @@ open ~/.dotfiles/terminal/Tomorrow\ Night\ Bright.itermcolors
 open ~/.dotfiles/terminal/Solarized\ Dark.itermcolors
 open ~/.dotfiles/terminal/Personal.itermcolors
 
-# NPM
-npm install -g $(<npm.txt)
-
 # Nano
 ln -s nano/.nanorc ~
 cd nano/nanorc
@@ -43,17 +40,8 @@ else
     ln -s ~/.bash_profile .local/share/mc/bashrc
 fi
 
-# Sublime
-cd ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User/
-ln -s ~/.dotfiles/sublime/Preferences.sublime-settings
-ln -s ~/.dotfiles/sublime/Package\ Control.sublime-settings
-ln -s ~/.dotfiles/sublime/Default\ \(OSX\).sublime-keymap
-cd ~/.dotfiles
-
 # OS X
 . etc/osx.sh
 
-echo 'Change sublime icon'
-echo 'Import IntelliJ settings'
 echo 'Install following applications from the AppStore:'
 cat appstore.txt

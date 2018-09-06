@@ -2,6 +2,9 @@
 	name = Vitaliy Ribachenko
 	email = vit@ribachenko.com
 
+[include]
+    path = ~/.gitconfig.creds
+
 [github]
   user = vitaliyr
 
