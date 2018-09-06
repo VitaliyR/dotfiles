@@ -1,5 +1,0 @@
-brunch
-bower
-ember-cli
-gulp
-jshint

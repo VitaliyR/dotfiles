@@ -1,11 +1,8 @@
 Reeder
 Tweetbot
-Parallels Desktop
-VMWare
 XCode
 iWork
-Telegram
 Screenflick
 RAR Expert
 Todoist
-Spectacle
+ColorSlurp
