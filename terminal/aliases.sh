@@ -67,9 +67,11 @@ function manp {
   fi
 }
 
-# Open PhpStorm
-function phpstorm {
-  open -a "PhpStorm" $@
+function renameAlias {
+  local old_alias=$(alias $1)
+  local new_alias="${old_alias/$1/$2}"
+  unalias $1
+  eval $new_alias
 }
 
 # Find occurrences in current directory recursive
@@ -331,16 +333,6 @@ function gitcheckout {
         echo -e '\x1B[91m\x1B[4mErrors with repositories:\x1B[24m\x1B[39m'
         echo -e "$errors"
     fi
-}
-
-function cliocheckout {
-    cd ~/hostroot
-    gitcheckout -e 'Packages\/((Framework)|(Libraries))' $@
-    cd flow
-    ./flow doctrine:update
-    ./flow translation:generatejson
-    cd ../clioui
-    grunt
 }
 
 alias cat='bat'
