@@ -17,3 +17,4 @@ telegram
 1password
 virtualbox
 virtualbox-extension-pack
+rocket
