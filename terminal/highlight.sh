@@ -82,7 +82,7 @@ export BOLD
 export RESET
 
 function parse_git_dirty() {
-  [[ $(git status 2> /dev/null | tail -n1) != *"working tree clean"* ]] && echo "*"
+  [[ $(git status --porcelain) != "" ]] && echo "*"
 }
 
 function parse_git_branch() {
