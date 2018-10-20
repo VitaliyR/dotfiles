@@ -11,10 +11,7 @@ iterm2
 firefox
 opera
 google-chrome
-slack
 spectacle
-telegram
-1password
 virtualbox
 virtualbox-extension-pack
 rocket

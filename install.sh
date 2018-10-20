@@ -43,5 +43,12 @@ fi
 # OS X
 . etc/osx.sh
 
-echo 'Install following applications from the AppStore:'
-cat appstore.txt
+echo 'Install applications from the AppStore. Press any key to continue\n'
+while read line; do
+    appName=$(cut -d'|' -f1 <<<"$line")
+    appLink=$(cut -d'|' -f2 <<<"$line")
+    echo $appName
+    open $appLink
+    read -n 1 -s -r </dev/tty
+done < appstore.txt
+echo 'Thats it'
