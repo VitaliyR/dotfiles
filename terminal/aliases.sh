@@ -44,7 +44,7 @@ function ru {
 }
 
 # LS with color output and numberized chmod
-function la {
+function ll {
  ls -lahG $1 | awk '{
   k=0;
   for (i=0; i<=8; i++)
