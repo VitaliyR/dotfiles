@@ -10,3 +10,4 @@ ColorSlurp|itms-apps://itunes.apple.com/ua/app/colorslurp/id1287239339
 Telegram|itms-apps://itunes.apple.com/ua/app/telegram/id747648890
 Slack|itms-apps://itunes.apple.com/ua/app/slack/id803453959
 1Password|itms-apps://itunes.apple.com/ua/app/1password-7-password-manager/id1333542190
+Batter Indicator|itms-apps://itunes.apple.com/ua/app/battery-indicator/id1206020918
