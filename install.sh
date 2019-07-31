@@ -43,6 +43,7 @@ if $isClient;
         brew tap homebrew/dupes
         brew tap caskroom/cask
         brew tap caskroom/versions
+        brew tap homebrew/cask-versions
         bi brew-cask
         bci $(<cask.txt)
         bi $(<brew.txt)
@@ -62,6 +63,9 @@ cd nano/nanorc
 make install
 cd ../../
 
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash
+nvm install 10
+
 # MC
 if [[ "$OSTYPE" == darwin* ]]; then
     ln -s ~/.profile .local/share/mc/bashrc
@@ -77,8 +81,16 @@ if [[ "$OSTYPE" == darwin* ]]; then
         open $appLink
         read -n 1 -s -r </dev/tty
     done < appstore.txt
+
+    echo 'Install manually:'
+    cat manual.txt
 else
     ln -s ~/.bash_profile .local/share/mc/bashrc
+fi
+
+if $isClient;
+    then
+        sudo gem install cocoapods
 fi
 
 echo 'Thats it'
