@@ -9,7 +9,7 @@ sequel-pro
 db-browser-for-sqlite
 iterm2
 firefox
-firefox-developer-edition
+homebrew/cask-versions/firefox-developer-edition
 opera
 google-chrome
 spectacle
@@ -21,7 +21,7 @@ alfred
 insomnia
 balenaetcher
 iina
-cleammymac3
+homebrew/cask-versions/cleanmymac3
 steam
 teamviewer
 transmission

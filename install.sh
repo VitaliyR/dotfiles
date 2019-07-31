@@ -17,6 +17,9 @@ case $installationType in
     "server")
         isClient=false
         ;;
+    "")
+	isClient=true
+	;;
     *)
         echo 'Nothing selected. Exiting'
         exit 1
@@ -36,14 +39,20 @@ ln -s ~/.dotfiles/terminal/imgcat.sh /usr/local/bin/imgcat
 ln -s $(pwd)/git/.gitconfig ~/.gitconfig
 ln -s $(pwd)/git/.gitignore_global ~/.gitignore_global
 
+echo "Have you installed Xcode already? Install it firstly"
+read -n 1 -s -r </dev/tty
+
 if $isClient;
     then
         # Homebrew
         ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-        brew tap homebrew/dupes
         brew tap caskroom/cask
-        brew tap caskroom/versions
         brew tap homebrew/cask-versions
+
+	brew cask install java
+
+	echo "Dont forget to add bash-completions to bash_profile"
+
         bi brew-cask
         bci $(<cask.txt)
         bi $(<brew.txt)
