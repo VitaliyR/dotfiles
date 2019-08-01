@@ -100,6 +100,7 @@ fi
 if $isClient;
     then
         sudo gem install cocoapods
+	open etc/Darcula.dvtcolortheme
 fi
 
 echo 'Thats it'
