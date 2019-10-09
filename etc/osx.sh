@@ -32,3 +32,6 @@ defaults write com.apple.Safari ShowFavoritesBar -bool false
 defaults write com.apple.Safari IncludeDevelopMenu -bool true
 defaults write com.apple.Safari WebKitDeveloperExtrasEnabledPreferenceKey -bool true
 defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebKit2DeveloperExtrasEnabled -bool true
+
+# Link iCloud folder to home for easy access from terminal
+ln -s "/Users/$USER/Library/Mobile Documents/com~apple~CloudDocs" ~/iCloud

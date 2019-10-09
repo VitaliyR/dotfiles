@@ -58,9 +58,6 @@ if $isClient;
         bi $(<brew.txt)
         bup;
 
-        # Hyper
-        ln -s $(pwd)/hyper.js ../../.hyper.js
-
         open ~/.dotfiles/terminal/Tomorrow\ Night\ Bright.itermcolors
         open ~/.dotfiles/terminal/Solarized\ Dark.itermcolors
         open ~/.dotfiles/terminal/Personal.itermcolors
