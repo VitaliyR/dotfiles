@@ -46,6 +46,38 @@ function get-vcs-info {
   fi
 }
 
+function has-files {
+  local files=("$@")
+  local root="$(pwd -P)"
+
+  for file in "${files[@]}"; do
+      local find_match="$(find $root -maxdepth 1 -name $file -print -quit 2>/dev/null)"
+      local filename="$root/$file"
+
+      if [[ -n "$find_match" ]]; then
+        [[ -z "$silent" ]] && echo "$find_match"
+        return 0
+      elif [[ -e "$filename" ]]; then
+        [[ -z "$silent" ]] && echo "$filename"
+        return 0
+      fi
+    done
+  find ./ -maxdepth 1 -name package.jsons -print -quit
+}
+
+function get-node-info {
+  node_info=''
+  if [[ $(command -v nvm) ]]; then
+    has_files=$(has-files package.json .nvmrc node_modules)
+    if [[ $has_files ]]; then
+      node_ver=$(nvm current)
+      if [[ node_ver ]]; then
+        node_info=" ${node_ver:1}"
+      fi
+    fi
+  fi
+}
+
 function prompt_vitalii_setup {
   setopt LOCAL_OPTIONS
   unsetopt XTRACE KSH_ARRAYS
@@ -53,13 +85,15 @@ function prompt_vitalii_setup {
 
   autoload -Uz add-zsh-hook
   add-zsh-hook precmd get-vcs-info
-  add-zsh-hook chpwd list-files
+  # add-zsh-hook chpwd list-files
   add-zsh-hook chpwd get-vcs-info
+  add-zsh-hook precmd get-node-info
+  add-zsh-hook chpwd get-node-info
 
   # zstyle ':omz:module:editor' completing '%B%F{red}...%f%b'
 
   # Time: %F{yellow}%T
-  PROMPT='%F{magenta}${SSH_TTY:+%n@%m }%F{cyan}%1~%f${vcs_info}\
+  PROMPT='%F{magenta}${SSH_TTY:+%n@%m }%F{cyan}%1~%f${vcs_info}%F{green}${node_info}\
 %(!.%B%F{red}#%f%b.%B %(?.%F{green}.%F{red})❯%f%b) '
   RPROMPT=''
   SPROMPT='zsh: correct %F{red}%R%f to %F{green}%r%f [nyae]? '
