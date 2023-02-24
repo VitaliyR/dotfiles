@@ -14,8 +14,3 @@
 
 * Link Alfred settings to `~/iCloud/Alfred`
 * Log in 1Password
-* Log in Todoist
-
-## TODO
-
-* Move to zsh

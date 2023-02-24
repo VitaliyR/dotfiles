@@ -1,47 +1,244 @@
-#!/usr/bin/env bash
-# bash completion, install via brew bash-completion
-if [[ "$OSTYPE" == darwin* ]] && [ -f `brew --prefix`/etc/bash_completion ]; then
-    . `brew --prefix`/etc/bash_completion
-fi
+#!/usr/bin/env zsh
 
 LANG=en_US.UTF-8
 
-alias egrep='egrep --color=auto'
+#
+# Initializes Prezto.
+#
+# Authors:
+#   Sorin Ionescu <sorin.ionescu@gmail.com>
 
-# CD to Homedir. Yes, too lazy to move fingers to ~
-alias cdh='cd ~'
+# Set case-sensitivity for completion, history lookup, etc.
+zstyle ':prezto:*:*' case-sensitive 'no'
 
-# Clearing the output
-alias cl='clear'
+# Color output (auto set to 'no' on dumb terminals).
+zstyle ':prezto:*:*' color 'yes'
 
-# Bower & NPM
-alias nii='npm install'
-alias niis='npm install --save'
-alias niisd='npm install --save-dev'
-alias ns='npm search'
-alias bii='bower install'
-alias biis='bower install --save'
-alias bs='bower search'
-alias bi='bower info'
-alias nbc='rm -rf {bower_components,node_modules} && npm install && bower install'
+#
+# Sets directory options and defines directory aliases.
+#
+# Authors:
+#   James Cox <james@imaj.es>
+#   Sorin Ionescu <sorin.ionescu@gmail.com>
+#
 
-alias ngre='sudo nginx -s stop && sudo nginx'
+#
+# Options
+#
+
+setopt AUTO_CD              # Auto changes to a directory without typing cd.
+setopt AUTO_PUSHD           # Push the old directory onto the stack on cd.
+setopt PUSHD_IGNORE_DUPS    # Do not store duplicates in the stack.
+setopt PUSHD_SILENT         # Do not print the directory stack after pushd or popd.
+setopt PUSHD_TO_HOME        # Push to home directory when no argument is given.
+setopt CDABLE_VARS          # Change directory to a path stored in a variable.
+setopt AUTO_NAME_DIRS       # Auto add variable-stored paths to ~ list.
+setopt MULTIOS              # Write to multiple descriptors.
+setopt EXTENDED_GLOB        # Use extended globbing syntax.
+unsetopt CLOBBER            # Do not overwrite existing files with > and >>.
+                            # Use >! and >>! to bypass.
+
+#
+# Sets general shell options and defines environment variables.
+#
+# Authors:
+#   Sorin Ionescu <sorin.ionescu@gmail.com>
+#
+
+#
+# Smart URLs
+#
+
+autoload -Uz url-quote-magic
+zle -N self-insert url-quote-magic
+
+#
+# General
+#
+
+setopt BRACE_CCL          # Allow brace character class list expansion.
+setopt COMBINING_CHARS    # Combine zero-length punctuation characters (accents)
+                          # with the base character.
+setopt RC_QUOTES          # Allow 'Henry''s Garage' instead of 'Henry'\''s Garage'.
+unsetopt MAIL_WARNING     # Don't print a warning message if a mail file has been accessed.
+
+#
+# Jobs
+#
+
+setopt LONG_LIST_JOBS     # List jobs in the long format by default.
+setopt AUTO_RESUME        # Attempt to resume existing job before creating a new process.
+setopt NOTIFY             # Report status of background jobs immediately.
+unsetopt BG_NICE          # Don't run all background jobs at a lower priority.
+unsetopt HUP              # Don't kill jobs on shell exit.
+unsetopt CHECK_JOBS       # Don't report on jobs when shell exit.
+
+#
+# Grep
+#
+
+if zstyle -t ':prezto:environment:grep' color; then
+  export GREP_COLOR='37;45'
+  export GREP_OPTIONS='--color=auto'
+fi
+
+#
+# Termcap
+#
+
+if zstyle -t ':prezto:environment:termcap' color; then
+  export LESS_TERMCAP_mb=$'\E[01;31m'      # Begins blinking.
+  export LESS_TERMCAP_md=$'\E[01;31m'      # Begins bold.
+  export LESS_TERMCAP_me=$'\E[0m'          # Ends mode.
+  export LESS_TERMCAP_se=$'\E[0m'          # Ends standout-mode.
+  export LESS_TERMCAP_so=$'\E[00;47;30m'   # Begins standout-mode.
+  export LESS_TERMCAP_ue=$'\E[0m'          # Ends underline.
+  export LESS_TERMCAP_us=$'\E[01;32m'      # Begins underline.
+fi
+
+
+#
+# Sets history options and defines history aliases.
+#
+# Authors:
+#   Robby Russell <robby@planetargon.com>
+#   Sorin Ionescu <sorin.ionescu@gmail.com>
+#
+
+#
+# Variables
+#
+
+HISTFILE="${ZDOTDIR:-$HOME}/.zhistory"       # The path to the history file.
+HISTSIZE=10000                   # The maximum number of events to save in the internal history.
+SAVEHIST=10000                   # The maximum number of events to save in the history file.
+
+
+#
+# Options
+#
+
+setopt BANG_HIST                 # Treat the '!' character specially during expansion.
+setopt EXTENDED_HISTORY          # Write the history file in the ':start:elapsed;command' format.
+setopt INC_APPEND_HISTORY        # Write to the history file immediately, not when the shell exits.
+setopt SHARE_HISTORY             # Share history between all sessions.
+setopt HIST_EXPIRE_DUPS_FIRST    # Expire a duplicate event first when trimming history.
+setopt HIST_IGNORE_DUPS          # Do not record an event that was just recorded again.
+setopt HIST_IGNORE_ALL_DUPS      # Delete an old recorded event if a new event is a duplicate.
+setopt HIST_FIND_NO_DUPS         # Do not display a previously found event.
+setopt HIST_IGNORE_SPACE         # Do not record an event starting with a space.
+setopt HIST_SAVE_NO_DUPS         # Do not write a duplicate event to the history file.
+setopt HIST_VERIFY               # Do not execute immediately upon history expansion.
+setopt HIST_BEEP                 # Beep when accessing non-existent history.
+
+
+#
+# Provides for easier use of 256 colors and effects.
+#
+# Authors:
+#   P.C. Shyamshankar <sykora@lucentbeing.com>
+#   Sorin Ionescu <sorin.ionescu@gmail.com>
+#
+
+# Return if requirements are not found.
+# if [[ "$TERM" == 'dumb' ]]; then
+#   return 1
+# fi
+
+typeset -gA FX FG BG
+
+FX=(
+                                        none                         "\e[00m"
+                                        normal                       "\e[22m"
+  bold                      "\e[01m"    no-bold                      "\e[22m"
+  faint                     "\e[02m"    no-faint                     "\e[22m"
+  standout                  "\e[03m"    no-standout                  "\e[23m"
+  underline                 "\e[04m"    no-underline                 "\e[24m"
+  blink                     "\e[05m"    no-blink                     "\e[25m"
+  fast-blink                "\e[06m"    no-fast-blink                "\e[25m"
+  reverse                   "\e[07m"    no-reverse                   "\e[27m"
+  conceal                   "\e[08m"    no-conceal                   "\e[28m"
+  strikethrough             "\e[09m"    no-strikethrough             "\e[29m"
+  gothic                    "\e[20m"    no-gothic                    "\e[22m"
+  double-underline          "\e[21m"    no-double-underline          "\e[22m"
+  proportional              "\e[26m"    no-proportional              "\e[50m"
+  overline                  "\e[53m"    no-overline                  "\e[55m"
+
+                                        no-border                    "\e[54m"
+  border-rectangle          "\e[51m"    no-border-rectangle          "\e[54m"
+  border-circle             "\e[52m"    no-border-circle             "\e[54m"
+
+                                        no-ideogram-marking          "\e[65m"
+  underline-or-right        "\e[60m"    no-underline-or-right        "\e[65m"
+  double-underline-or-right "\e[61m"    no-double-underline-or-right "\e[65m"
+  overline-or-left          "\e[62m"    no-overline-or-left          "\e[65m"
+  double-overline-or-left   "\e[63m"    no-double-overline-or-left   "\e[65m"
+  stress                    "\e[64m"    no-stress                    "\e[65m"
+
+                                        font-default                 "\e[10m"
+  font-first                "\e[11m"    no-font-first                "\e[10m"
+  font-second               "\e[12m"    no-font-second               "\e[10m"
+  font-third                "\e[13m"    no-font-third                "\e[10m"
+  font-fourth               "\e[14m"    no-font-fourth               "\e[10m"
+  font-fifth                "\e[15m"    no-font-fifth                "\e[10m"
+  font-sixth                "\e[16m"    no-font-sixth                "\e[10m"
+  font-seventh              "\e[17m"    no-font-seventh              "\e[10m"
+  font-eigth                "\e[18m"    no-font-eigth                "\e[10m"
+  font-ninth                "\e[19m"    no-font-ninth                "\e[10m"
+)
+
+FG[none]="$FX[none]"
+BG[none]="$FX[none]"
+colors=(black red green yellow blue magenta cyan white)
+for color in {0..255}; do
+  if (( $color >= 0 )) && (( $color < $#colors )); then
+    index=$(( $color + 1 ))
+    FG[$colors[$index]]="\e[38;5;${color}m"
+    BG[$colors[$index]]="\e[48;5;${color}m"
+  fi
+
+  FG[$color]="\e[38;5;${color}m"
+  BG[$color]="\e[48;5;${color}m"
+done
+unset color{s,} index
+
+setopt CORRECT
 
 # System
 alias cpu='ps -eo pcpu,pid,user,args | sort -k 1 -r | head -10'
 alias mtr='/usr/local/Cellar/mtr/0.86/sbin/mtr'
-# Lock the system with screensaver
-alias lock='open -a /System/Library/Frameworks/ScreenSaver.framework/Versions/A/Resources/ScreenSaverEngine.app'
 
 # Start web server
-alias server='python -m SimpleHTTPServer 8000'
+alias serve='python3 -m http.server 8000'
+alias server='serve'
 
-# Removes unnecessary files like ._ or .DS_Store.
-# Using for clearing flash drive for my car
-function ru {
- find . -name '._*' -exec rm -v {} \;
- find . -name '.DS_Store' -exec rm -v {} \;
-}
+# Disable correction.
+alias ack='nocorrect ack'
+alias cd='nocorrect cd'
+alias cp='nocorrect cp'
+alias ebuild='nocorrect ebuild'
+alias gcc='nocorrect gcc'
+alias gist='nocorrect gist'
+alias grep='nocorrect grep'
+alias heroku='nocorrect heroku'
+alias ln='nocorrect ln'
+alias man='nocorrect man'
+alias mkdir='nocorrect mkdir'
+alias mv='nocorrect mv'
+alias rm='nocorrect rm'
+
+# Disable globbing.
+alias bower='noglob bower'
+alias fc='noglob fc'
+alias find='noglob find'
+alias ftp='noglob ftp'
+alias history='noglob history'
+alias locate='noglob locate'
+alias rake='noglob rake'
+alias rsync='noglob rsync'
+alias scp='noglob scp'
+alias sftp='noglob sftp'
+alias e='${(z)VISUAL:-${(z)EDITOR}}'
 
 # LS with color output and numberized chmod
 function ll {
@@ -84,6 +281,10 @@ function findwordin {
  find ./ -name $1 | xargs grep $2
 }
 
+function is-callable {
+  (( $+commands[$1] )) || (( $+functions[$1] )) || (( $+aliases[$1] ))
+}
+
 # Count of files
 function fcount {
   if [ -z "$1" ]
@@ -112,7 +313,7 @@ function rmfiles {
 
 alias gr='git reset --hard'
 function gc {
-	git checkout -b $1 --track origin/$1
+    git checkout -b $1 --track origin/$1
 }
 alias ga='git add .'
 alias gs='git status'
@@ -151,188 +352,6 @@ function extract {
         echo "$1 - file does not exist"
     fi
 fi
-}
-
-function exuadownload {
- wget $1 -e use_proxy=yes -e http_proxy=77.47.137.232:3128
-}
-
-# Code Highlight
-alias hjs="pbpaste | highlight --syntax=js -O rtf --font-size 24 --font Inconsolata --style solarized-dark | pbcopy"
-alias hhtml="pbpaste | highlight --syntax=js -O rtf --font-size 24 --font Inconsolata --style solarized-dark | pbcopy"
-alias hobjc="pbpaste | highlight --syntax=objc -O rtf --font-size 24 --font Inconsolata --style solarized-dark | pbcopy"
-alias hswift="pbpaste | highlight --syntax=swift -O rtf --font-size 24 --font Inconsolata --style solarized-dark | pbcopy"
-
-# Alias for maven install for IDEA w/o Maven plugin
-alias sap="mvn clean install -PinstallPackage -Dmaven.test.skip=true"
-
-# Open GC or Opera with support CORS for file
-alias ggc='open -a Google\ Chrome --args --disable-web-security'
-alias opera='open -a Opera --args --disable-web-security'
-
-# Open Editors
-alias sublime='open -a Sublime\ Text'
-
-if [[ "$OSTYPE" == darwin* ]]; then
- export JAVA_HOME=/Library/Internet\ Plug-Ins/JavaAppletPlugin.plugin/Contents/Home
- export MAVEN_OPTS="-Xms256m -Xmx512m -XX:PermSize=64m -XX:MaxPermSize=256m -Djava.awt.headless=true"
- export GEM_HOME=$HOME/.ruby
- export DEVELOPER_DIR="/Applications/Xcode.app/Contents/Developer"
-fi
-
-# Homebrew
-alias brup='brew update && brew upgrade --all'
-alias brout='brew outdated'
-alias bri='brew install'
-alias brl='brew list'
-alias brs='brew search'
-alias brci='brew cask install'
-alias brcl='brew cask list'
-alias brcs='brew cask search'
-
-alias fuck='eval $(thefuck $(fc -ln -1)); history -r'
-
-# git checkout recursive repositories in current directory and sub directories
-function gitcheckout {
-    local defaultBranch='master'
-    local branch
-    local foundBranch
-    local force=false
-    local update=true
-    local verbose=false
-    local exclude
-    local errors=''
-    local output
-
-    while [ ! $# -eq 0 ]
-    do
-        case "$1" in
-            -f)
-                force=true
-                ;;
-            -u)
-                update=false
-                ;;
-            -d)
-                defaultBranch=d
-                ;;
-            -e)
-                exclude=$2
-                shift
-                ;;
-            -v)
-                verbose=true
-                ;;
-            -h)
-                echo 'Usage: -f[reset hard] -u[disable fetch] -d[default branch:master] -e[exclude regexp] -v[verbose log] -h[print help] BRANCH_NAME'
-                return
-                ;;
-            *)
-                branch=$1
-                ;;
-        esac
-        shift
-    done
-
-    echo 'Searching for repositories'
-
-    local cwd=$(pwd)
-    local directories=$(find . -name '.git' -type d)
-
-    if [ -z $branch ]; then
-        branch=$defaultBranch
-    fi
-
-    echo ''
-    echo -e '\x1B[4mUpdating repositories to' $branch'\x1B[24m'
-    echo -e '\x1B[4mForce\x1B[24m:' $force '  \x1B[4mFetch\x1B[24m:' $update '  \x1B[4mDefault branch\x1B[24m:' $defaultBranch '\x1B[24m'
-    if [ ! -z "$exclude" ]; then
-        echo -e '\x1B[4mExclude\x1B[24m:' $exclude
-    fi
-    echo ''
-
-    for REPO in $directories
-    do
-        cd $REPO/../
-
-        local repoPWD=$(pwd)
-
-        if [ ! -z "$exclude" ] &&  [[ $repoPWD =~ $exclude ]]; then
-            echo -e '\x1B[93mSkipping' ${PWD##*/} '\x1B[0m'
-            echo ''
-            echo ''
-
-            cd $cwd
-            continue
-        fi
-
-        echo -e '\x1B[4mUpdating' ${PWD##*/}'\x1B[24m'
-        echo ''
-
-        if [ $force == 'true' ]; then
-            output=$(git reset --hard 2>&1)
-        else
-            output=$(git reset 2>&1)
-        fi
-
-        if [ $verbose == 'true' ]; then
-            echo -e "$output"
-        fi
-
-        if [ $update == 'true' ]; then
-            output=$(git fetch 2>&1)
-
-            if [ $? -ne 0 ]; then
-                echo -e "$output"
-                errors+=$(echo 'Fetching\x1B[1m' ${PWD##*/} '\x1B[0m\n')
-            else
-                if [ $verbose == 'true' ]; then
-                  echo -e "$output"
-                fi
-            fi
-        fi
-
-        foundBranch=$(git branch -r | grep -w -E '^. (origin/'$branch')$')
-
-        if [ -n "$foundBranch" ]; then
-            echo -e '\x1B[92mFound' $branch '\x1B[39m'
-            output=$(git checkout $branch 2>&1)
-        else
-            echo -e '\x1B[91mNot found' $branch 'Updating to' $defaultBranch '\x1B[39m'
-            output=$(git checkout $defaultBranch 2>&1)
-        fi
-
-        if [ $? -ne 0 ]; then
-            echo -e "$output"
-            errors+=$(echo 'Checkout\x1B[1m' ${PWD##*/} '\x1B[0m\n')
-        else
-            if [ $verbose == 'true' ]; then
-                echo -e "$output"
-            fi
-        fi
-
-        if [ $update == 'true' ]; then
-            output=$(git pull 2>&1)
-
-            if [ $? -ne 0 ]; then
-                echo -e "$output"
-                errors+=$(echo 'Pull\x1B[1m' ${PWD##*/} '\x1B[0m\n')
-            else
-                if [ $verbose == 'true' ]; then
-                    echo -e "$output"
-                fi
-            fi
-        fi
-
-        echo ''
-
-        cd $cwd
-    done
-
-    if [ ! -z "$errors" ]; then
-        echo -e '\x1B[91m\x1B[4mErrors with repositories:\x1B[24m\x1B[39m'
-        echo -e "$errors"
-    fi
 }
 
 alias cat='bat'

@@ -1,28 +1,23 @@
 # Dotfiles
 My configuration files for utilities which I'm using everyday.
-![Screenshot](img/terminal.png)
+
+![Screenshot](https://user-images.githubusercontent.com/2149612/221081601-a9386145-c00e-4cd3-a399-e90a250c8d47.png)
 
 ## Features
 * No dependencies
-* Bash
- * aliases for npm, bower
- * aliases for brew
- * lock - run screensaver with password protection
+* Zsh
+ * prompt
  * la is for better ls - with color output and numberized chmod
  * manp - like man but in Text.app
  * ru - removes unnecessary ._* media files & DS_Store
  * extract - unzip any archive
- * h{{lang}} - hjs, hhtml, hcss - syntax highlighter for the code from buffer. Puts highlighted back to buffer
- * gc - opens google chrome with disabled web security (sometimes required for lazy development without setuping local web server)
- * some maven crappy alias
- * cool highlight of terminal output
 * Homebrew
  * For packages look into [brew.txt](brew.txt)
  * For casks look into [cask.txt](cask.txt)
 * Git config and global ignore
 * Nano syntax highlighter
 * iTerm color theme
-* OS X tweaks
+* Xcode theme
 
 ## Installation
 ```
@@ -31,12 +26,11 @@ cd ~ && git clone --recursive git://github.com/vitaliyr/dotfiles.git ~/.dotfiles
 
 ## Thanks
 * [Paul Miller](https://github.com/paulmillr) for bootstrap and ideas
-* [Gianni Chiappetta](https://github.com/gf3) for prompt
 
 ## License
 The MIT License (MIT)
 
-Copyright (c) 2018 Vitaliy Ribachenko ([http://ribachenko.com](http://ribachenko.com))
+Copyright (c) 2023 Vitaliy Ribachenko ([http://ribachenko.com](http://ribachenko.com))
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

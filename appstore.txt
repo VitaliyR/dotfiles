@@ -1,13 +1,15 @@
-Reeder|itms-apps://itunes.apple.com/ua/app/reeder-3/id880001334
-Tweetbot|itms-apps://itunes.apple.com/ua/app/tweetbot-3-for-twitter/id1384080005
-XCode|itms-apps://itunes.apple.com/ua/app/xcode/id497799835
-Pages|itms-apps://itunes.apple.com/ua/app/pages/id409201541
-Numbers|itms-apps://itunes.apple.com/ua/app/numbers/id409203825
-Keynote|itms-apps://itunes.apple.com/ua/app/keynote/id409183694
-RAR Expert|itms-apps://itunes.apple.com/ua/app/rar-expert/id647686027
-Todoist|itms-apps://itunes.apple.com/ua/app/todoist-organize-your-life/id585829637
-ColorSlurp|itms-apps://itunes.apple.com/ua/app/colorslurp/id1287239339
-Telegram|itms-apps://itunes.apple.com/ua/app/telegram/id747648890
-Slack|itms-apps://itunes.apple.com/ua/app/slack/id803453959
-1Password|itms-apps://itunes.apple.com/ua/app/1password-7-password-manager/id1333542190
-Battery Indicator|itms-apps://itunes.apple.com/ua/app/battery-indicator/id1206020918
+XCode|itms-apps://itunes.apple.com/us/app/xcode/id497799835
+Pages|itms-apps://itunes.apple.com/us/app/pages/id409201541
+Numbers|itms-apps://itunes.apple.com/us/app/numbers/id409203825
+Keynote|itms-apps://itunes.apple.com/us/app/keynote/id409183694
+ColorSlurp|itms-apps://itunes.apple.com/us/app/colorslurp/id1287239339
+Slack|itms-apps://itunes.apple.com/us/app/slack/id803453959
+1Password|itms-apps://itunes.apple.com/us/app/1password-7-password-manager/id1333542190
+Shareful|itms-apps://itunes.apple.com/us/app/shareful/id1522267256
+Dato|itms-apps://itunes.apple.com/us/app/dato/id1470584107
+PixelmatorPro|itms-apps://itunes.apple.com/us/app/pixelmator-pro/id1289583905
+VPNUnlimited|itms-apps://itunes.apple.com/us/app/vpn-unlimited-ip-changer-app/id694633015
+Velja|itms-apps://itunes.apple.com/us/app/velja/id1607635845
+Unarchiver|itms-apps://itunes.apple.com/us/app/the-unarchiver/id425424353
+Zed|https://zed.dev
+Ivory|https://tapbots.com/ivory/mac

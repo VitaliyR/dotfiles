@@ -1,9 +1,9 @@
 [submodule "nano/nanorc"]
 	path = nano/nanorc
-	url = https://github.com/nanorc/nanorc.git
-[submodule "intellij/tmbundles/java.tmbundle"]
-	path = intellij/tmbundles/java.tmbundle
-	url = https://github.com/textmate/java.tmbundle
-[submodule "intellij/tmbundles/python.tmbundle"]
-	path = intellij/tmbundles/python.tmbundle
-	url = https://github.com/textmate/python.tmbundle
+	url = https://github.com/scopatz/nanorc.git
+[submodule "terminal/highlight"]
+	path = terminal/highlight
+	url = https://github.com/zsh-users/zsh-syntax-highlighting
+[submodule "terminal/completion"]
+	path = terminal/completion
+	url = https://github.com/zsh-users/zsh-completions

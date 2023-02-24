@@ -1,8 +1,5 @@
-bash-completion
 bat
-bfg
 diff-so-fancy
-highlight
 jq
 lame
 mc
@@ -16,6 +13,7 @@ pngquant
 ssh-copy-id
 terminal-notifier
 thefuck
+trash
 unrar
 watchman
 wget
