@@ -1,7 +1,7 @@
 # Dotfiles
 My configuration files for utilities which I'm using everyday.
 
-![Screenshot](https://user-images.githubusercontent.com/2149612/221081601-a9386145-c00e-4cd3-a399-e90a250c8d47.png)
+![Screenshot](https://user-images.githubusercontent.com/2149612/221192964-61983fc7-2bc4-4ac8-badf-4b2d48d1c901.png)
 
 ## Features
 * No dependencies
