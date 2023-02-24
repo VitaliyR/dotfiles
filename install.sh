@@ -49,7 +49,8 @@ if $isClient;
 fi
 
 # Nano
-ln -s nano/.nanorc $HOME
+mkdir -p $HOME/.nano
+ln -s $HOME/.dotfiles/nano/.nanorc $HOME/
 
 # NVM
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
