@@ -2,6 +2,8 @@
 
 cd $HOME/.dotfiles
 
+. ./variables.sh
+
 echo 'Installing on the server or local machine?'
 echo '(c)lient [default]'
 echo '(s)erver'
@@ -33,6 +35,10 @@ source './terminal/zshrc.sh'
 ln -s $(pwd)/git/.gitconfig ~/.gitconfig
 ln -s $(pwd)/git/.gitignore_global ~/.gitignore_global
 
+# karabiner
+mkdir -p ~/.config
+ln -s $(pwd)/settings/karabiner ~/.config/
+
 echo "Have you installed Xcode already? Install it firstly"
 read -n 1 </dev/tty
 
@@ -55,7 +61,6 @@ ln -s $HOME/.dotfiles/nano/.nanorc $HOME/
 # NVM
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
 
-# MC
 if [[ "$OSTYPE" == darwin* ]] && $isClient; then
     echo 'Install applications from the AppStore. Press any key to continue\n'
     while read line; do
@@ -72,5 +77,8 @@ if [[ "$OSTYPE" == darwin* ]] && $isClient; then
     echo 'Theme for Xcode'
 	open etc/Darcula.dvtcolortheme
 fi
+
+# Velja
+cp ./settings/$VELJA_PLIST_NAME $VELJA_PLIST
 
 echo 'Profit'
