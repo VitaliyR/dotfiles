@@ -226,6 +226,7 @@ alias man='nocorrect man'
 alias mkdir='nocorrect mkdir'
 alias mv='nocorrect mv'
 alias rm='nocorrect rm'
+alias jest='nocorrect jest'
 
 # Disable globbing.
 alias bower='noglob bower'
