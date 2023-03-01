@@ -104,8 +104,6 @@ function prompt_vitalii_setup {
   add-zsh-hook chpwd get-node-info
   add-zsh-hook precmd npm_path_hook
 
-  # zstyle ':omz:module:editor' completing '%B%F{red}...%f%b'
-
   # Time: %F{yellow}%T
   PROMPT='%F{magenta}${SSH_TTY:+%n@%m }%F{cyan}%1~%f${vcs_info}%F{green}${node_info}\
 %(!.%B%F{red}#%f%b.%B %(?.%F{green}.%F{red})❯%f%b) '
