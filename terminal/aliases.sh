@@ -212,22 +212,6 @@ alias mtr='/usr/local/Cellar/mtr/0.86/sbin/mtr'
 alias serve='python3 -m http.server 8000'
 alias server='serve'
 
-# Disable correction.
-alias ack='nocorrect ack'
-alias cd='nocorrect cd'
-alias cp='nocorrect cp'
-alias ebuild='nocorrect ebuild'
-alias gcc='nocorrect gcc'
-alias gist='nocorrect gist'
-alias grep='nocorrect grep'
-alias heroku='nocorrect heroku'
-alias ln='nocorrect ln'
-alias man='nocorrect man'
-alias mkdir='nocorrect mkdir'
-alias mv='nocorrect mv'
-alias rm='nocorrect rm'
-alias jest='nocorrect jest'
-
 # Disable globbing.
 alias bower='noglob bower'
 alias fc='noglob fc'

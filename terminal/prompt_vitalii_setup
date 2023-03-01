@@ -78,6 +78,19 @@ function get-node-info {
   fi
 }
 
+function npm_path_hook() {
+  if [[ -n $NPM_DIR ]]; then
+    # remove old dir from path
+    path=(${path:#$NPM_DIR})
+    unset NPM_DIR
+  fi
+
+  if [[ -d "${PWD}/node_modules/.bin" ]]; then
+    NPM_DIR="${PWD}/node_modules/.bin"
+    path=($NPM_DIR $path)
+  fi
+}
+
 function prompt_vitalii_setup {
   setopt LOCAL_OPTIONS
   unsetopt XTRACE KSH_ARRAYS
@@ -89,6 +102,7 @@ function prompt_vitalii_setup {
   add-zsh-hook chpwd get-vcs-info
   add-zsh-hook precmd get-node-info
   add-zsh-hook chpwd get-node-info
+  add-zsh-hook precmd npm_path_hook
 
   # zstyle ':omz:module:editor' completing '%B%F{red}...%f%b'
 
