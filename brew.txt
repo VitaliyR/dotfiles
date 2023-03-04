@@ -6,6 +6,7 @@ mc
 nano
 ncurses
 nmap
+neovim
 openssl
 pcre
 pkg-config
