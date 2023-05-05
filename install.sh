@@ -32,7 +32,7 @@ ln -s "$HOME/.dotfiles/terminal/zshrc.sh" "$HOME/.zshrc"
 source './terminal/zshrc.sh'
 
 touch $HOME/.zshenv
-echo "$HOME/.dotfiles/terminal/aliases.sh" >> .zshenv
+echo "source $HOME/.dotfiles/terminal/aliases.sh" >> .zshenv
 
 # Git
 ln -s $(pwd)/git/.gitconfig ~/.gitconfig
