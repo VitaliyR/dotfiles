@@ -31,6 +31,9 @@ echo "Installing for $(if $isClient; then echo 'client'; else echo 'server'; fi)
 ln -s "$HOME/.dotfiles/terminal/zshrc.sh" "$HOME/.zshrc"
 source './terminal/zshrc.sh'
 
+touch $HOME/.zshenv
+echo "$HOME/.dotfiles/terminal/aliases.sh" >> .zshenv
+
 # Git
 ln -s $(pwd)/git/.gitconfig ~/.gitconfig
 ln -s $(pwd)/git/.gitignore_global ~/.gitignore_global
@@ -39,6 +42,9 @@ ln -s $(pwd)/git/.gitignore_global ~/.gitignore_global
 mkdir -p ~/.config
 ln -s $(pwd)/settings/karabiner ~/.config/
 
+# neovim
+ln -s $(pwd)/nvim ~/.config/
+
 echo "Have you installed Xcode already? Install it firstly"
 read -n 1 </dev/tty
 
@@ -46,6 +52,8 @@ if $isClient;
     then
         # Homebrew
         ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
+        brew tap homebrew/cask-fonts
 
         brew install $(<cask.txt) --cask
         brew install $(<brew.txt)

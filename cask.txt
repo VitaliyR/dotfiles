@@ -16,8 +16,10 @@ transmission
 wineskin-winery
 karabiner-elements
 homebrew/cask-drivers/logitech-options
+font-symbols-only-nerd-font
+font-jetbrains-mono-nerd-font
 sublime-text
-robo-3t
+studio-3t
 zoom
 telegram
 paw

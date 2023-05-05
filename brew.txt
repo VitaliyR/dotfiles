@@ -15,6 +15,7 @@ ssh-copy-id
 terminal-notifier
 thefuck
 trash
+ripgrep
 unrar
 watchman
 wget
