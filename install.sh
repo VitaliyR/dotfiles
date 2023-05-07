@@ -27,6 +27,9 @@ esac
 
 echo "Installing for $(if $isClient; then echo 'client'; else echo 'server'; fi)"
 
+# tmux
+ln -s "$HOME/.dotfiles/terminal/tmux.conf" "$HOME/.tmux.conf"
+
 # zsh
 ln -s "$HOME/.dotfiles/terminal/zshrc.sh" "$HOME/.zshrc"
 source './terminal/zshrc.sh'

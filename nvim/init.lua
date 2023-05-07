@@ -62,9 +62,6 @@ vim.keymap.set('n', '<leader>W', '<C-^>')
 -- See `:help vim.keymap.set()`
 vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 
--- next window
-vim.keymap.set('n', '<leader>e', '<C-w>w')
-
 -- move when highlighted
 vim.keymap.set('v', 'J', ":m '>+1<CR>gv=gv")
 vim.keymap.set('v', 'K', ":m '<-2<CR>gv=gv")
@@ -86,6 +83,12 @@ vim.keymap.set('x', '<leader>p', "\"_dP")
 -- Remap for dealing with word wrap
 vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
 vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
+
+-- go window/pane
+-- vim.keymap.set('n', '<C-l>', '<C-w>l')
+-- vim.keymap.set('n', '<C-h>', '<C-w>h')
+-- vim.keymap.set('n', '<C-j>', '<C-w>j')
+-- vim.keymap.set('n', '<C-k>', '<C-w>k')
 
 -- replace word
 vim.keymap.set('n', '<leader>rw', [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
