@@ -1,7 +1,8 @@
 live_config_reload: true
 window:
   dynamic_title: true
-  opacity: 0.95
+  opacity: 0.9
+  decorations: buttonless
 font:
   normal:
     family: "JetBrainsMono Nerd Font Mono"
