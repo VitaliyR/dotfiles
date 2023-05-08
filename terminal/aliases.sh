@@ -208,6 +208,8 @@ setopt CORRECT
 alias cpu='ps -eo pcpu,pid,user,args | sort -k 1 -r | head -10'
 alias mtr='/usr/local/Cellar/mtr/0.86/sbin/mtr'
 
+alias tmux='tmux -u'
+
 # Start web server
 alias serve='python3 -m http.server 8000'
 alias server='serve'
