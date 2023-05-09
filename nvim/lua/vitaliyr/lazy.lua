@@ -159,5 +159,10 @@ require('lazy').setup({
 
   {
     'christoomey/vim-tmux-navigator'
+  },
+
+  {
+    'stevearc/dressing.nvim',
+    opts = {}
   }
 }, {})
