@@ -164,5 +164,9 @@ require('lazy').setup({
   {
     'stevearc/dressing.nvim',
     opts = {}
+  },
+
+  {
+   'lewis6991/gitsigns.nvim'
   }
 }, {})

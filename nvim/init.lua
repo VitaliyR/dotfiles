@@ -5,6 +5,8 @@ require('vitaliyr.lazy')
 
 require('vitaliyr.tree')
 
+require('vitaliyr.gitsigns')
+
 -- [[ Setting options ]]
 -- See `:help vim.o`
 
