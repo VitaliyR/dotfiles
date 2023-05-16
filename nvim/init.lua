@@ -7,6 +7,8 @@ require('vitaliyr.tree')
 
 require('vitaliyr.gitsigns')
 
+require('vitaliyr.mini')
+
 -- [[ Setting options ]]
 -- See `:help vim.o`
 

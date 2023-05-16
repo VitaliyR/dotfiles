@@ -1,18 +1,18 @@
 -- LSP settings.
 --  This function gets run when an LSP connects to a particular buffer.
-local on_attach = function(_, bufnr)
+local on_attach = function(_, bufnr, server_name)
   -- NOTE: Remember that lua is a real programming language, and as such it is possible
   -- to define small helper and utility functions so you don't have to repeat yourself
   -- many times.
   --
   -- In this case, we create a function that lets us more easily define mappings specific
   -- for LSP related items. It sets the mode, buffer and description for us each time.
-  local nmap = function(keys, func, desc)
+  local nmap = function(keys, func, desc, buffer)
     if desc then
       desc = 'LSP: ' .. desc
     end
 
-    vim.keymap.set('n', keys, func, { buffer = bufnr, desc = desc })
+    vim.keymap.set('n', keys, func, { buffer = buffer or bufnr, desc = desc })
   end
 
   nmap('<leader>rn', vim.lsp.buf.rename, '[R]e[n]ame')
@@ -37,6 +37,10 @@ local on_attach = function(_, bufnr)
     print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
   end, '[W]orkspace [L]ist Folders')
 
+  if server_name == 'eslint' then
+    nmap('<leader>fl', ':EslintFixAll<CR>', 'Eslint Format')
+  end
+
   -- Create a command `:Format` local to the LSP buffer
   vim.api.nvim_buf_create_user_command(bufnr, 'Format', function(_)
     vim.lsp.buf.format()
@@ -49,11 +53,12 @@ end
 --  Add any additional override configuration in the following tables. They will be passed to
 --  the `settings` field of the server config. You must look up that documentation yourself.
 local servers = {
-  -- clangd = {},
-  -- gopls = {},
-  -- pyright = {},
   -- rust_analyzer = {},
   tsserver = {},
+
+  eslint = {},
+  stylelint_lsp = {},
+  svelte = {},
 
   lua_ls = {
     Lua = {
@@ -61,6 +66,10 @@ local servers = {
       telemetry = { enable = false },
     },
   },
+}
+
+local fileTypes = {
+  stylelint_lsp = { "css", "less", "scss", "sugarss", "wxss" }
 }
 
 -- nvim-cmp supports additional completion capabilities, so broadcast that to servers
@@ -81,8 +90,9 @@ mason_lspconfig.setup_handlers {
   function(server_name)
     require('lspconfig')[server_name].setup {
       capabilities = capabilities,
-      on_attach = on_attach,
+      on_attach = function(client, bufnr) on_attach(client, bufnr, server_name) end,
       settings = servers[server_name],
+      filetypes = fileTypes[server_name]
     }
   end,
 }

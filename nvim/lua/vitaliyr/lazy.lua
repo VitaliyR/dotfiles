@@ -168,5 +168,18 @@ require('lazy').setup({
 
   {
    'lewis6991/gitsigns.nvim'
+  },
+
+  {
+    'echasnovski/mini.pairs'
+  },
+
+  {
+    'echasnovski/mini.surround'
+  },
+
+  {
+    'echasnovski/mini.comment'
   }
+
 }, {})
