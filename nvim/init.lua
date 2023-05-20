@@ -9,6 +9,8 @@ require('vitaliyr.gitsigns')
 
 require('vitaliyr.mini')
 
+require('vitaliyr.spectre')
+
 -- [[ Setting options ]]
 -- See `:help vim.o`
 

@@ -59,6 +59,8 @@ local servers = {
   eslint = {},
   stylelint_lsp = {},
   svelte = {},
+  cssls = {},
+  cssmodules_ls = {},
 
   lua_ls = {
     Lua = {
