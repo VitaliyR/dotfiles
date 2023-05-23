@@ -54,7 +54,25 @@ end
 --  the `settings` field of the server config. You must look up that documentation yourself.
 local servers = {
   -- rust_analyzer = {},
-  tsserver = {},
+  tsserver = {
+    typescript = {
+      format = {
+        indentSize = vim.o.shiftwidth,
+        convertTabsToSpaces = vim.o.expandtab,
+        tabSize = vim.o.tabstop,
+      },
+    },
+    javascript = {
+      format = {
+        indentSize = vim.o.shiftwidth,
+        convertTabsToSpaces = vim.o.expandtab,
+        tabSize = vim.o.tabstop,
+      },
+    },
+    completions = {
+      completeFunctionCalls = true,
+    }
+  },
 
   eslint = {},
   stylelint_lsp = {},
@@ -72,6 +90,14 @@ local servers = {
 
 local fileTypes = {
   stylelint_lsp = { "css", "less", "scss", "sugarss", "wxss" }
+}
+
+local initOptions = {
+  tsserver = {
+    preferences = {
+      importModuleSpecifierPreference = 'project-relative'
+    }
+  }
 }
 
 -- nvim-cmp supports additional completion capabilities, so broadcast that to servers
@@ -94,7 +120,8 @@ mason_lspconfig.setup_handlers {
       capabilities = capabilities,
       on_attach = function(client, bufnr) on_attach(client, bufnr, server_name) end,
       settings = servers[server_name],
-      filetypes = fileTypes[server_name]
+      filetypes = fileTypes[server_name],
+      init_options = initOptions[server_name]
     }
   end,
 }

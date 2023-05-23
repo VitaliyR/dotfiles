@@ -11,6 +11,8 @@ require('vitaliyr.mini')
 
 require('vitaliyr.spectre')
 
+require('vitaliyr.harpoon')
+
 -- [[ Setting options ]]
 -- See `:help vim.o`
 
@@ -95,6 +97,8 @@ vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = tr
 -- vim.keymap.set('n', '<C-h>', '<C-w>h')
 -- vim.keymap.set('n', '<C-j>', '<C-w>j')
 -- vim.keymap.set('n', '<C-k>', '<C-w>k')
+vim.keymap.set('n', '<C-w>|', '<C-w>v')
+vim.keymap.set('n', '<C-w>-', '<C-w>s')
 
 -- replace word
 vim.keymap.set('n', '<leader>rw', [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])

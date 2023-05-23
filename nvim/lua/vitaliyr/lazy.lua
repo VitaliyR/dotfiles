@@ -179,7 +179,14 @@ require('lazy').setup({
   },
 
   {
-    'echasnovski/mini.comment'
+    'RRethy/vim-illuminate'
+  },
+
+  {
+    'ThePrimeagen/harpoon',
+    dependencies = {
+      'nvim-lua/plenary.nvim'
+    }
   }
 
 }, {})
