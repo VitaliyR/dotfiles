@@ -148,6 +148,13 @@ require('lazy').setup({
     end,
   },
 
+  {
+    'nvim-treesitter/nvim-treesitter-context',
+    dependencies = {
+      'nvim-treesitter/nvim-treesitter'
+    }
+  },
+
   -- tree + icons
 
   {
