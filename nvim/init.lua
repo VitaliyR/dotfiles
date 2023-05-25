@@ -22,7 +22,9 @@ vim.o.tabstop = 2
 vim.o.hlsearch = false
 vim.o.incsearch = true
 
-vim.o.scrolloff = 10
+local scrolloff = 10
+vim.o.scrolloff = scrolloff
+vim.keymap.set('n', '<leader>tc', ':let &scrolloff=999-&scrolloff+' .. scrolloff .. '<CR>')
 
 -- Make line numbers default
 vim.wo.number = true

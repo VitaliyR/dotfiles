@@ -45,6 +45,8 @@ local on_attach = function(_, bufnr, server_name)
   vim.api.nvim_buf_create_user_command(bufnr, 'Format', function(_)
     vim.lsp.buf.format()
   end, { desc = 'Format current buffer with LSP' })
+
+  nmap('<leader>ff', ':Format<CR>', 'Format LSP')
 end
 
 -- Enable the following language servers
@@ -75,7 +77,11 @@ local servers = {
   },
 
   eslint = {},
-  stylelint_lsp = {},
+  stylelint_lsp = {
+    stylelintplus = {
+      autoFixOnFormat = true
+    }
+  },
   svelte = {},
   cssls = {},
   cssmodules_ls = {},
