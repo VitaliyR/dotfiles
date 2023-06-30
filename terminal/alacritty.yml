@@ -14,6 +14,8 @@ font:
     family: "JetBrainsMono Nerd Font Mono"
     style: "Italic"
   size: 12
+key_bindings:
+  - { key: K, mods: Control|Shift, chars: "printf \"\\033c\"\n" }
 colors:
   # transparent_background_colors: true
   # Default colors

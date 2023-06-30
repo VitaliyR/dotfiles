@@ -194,6 +194,11 @@ require('lazy').setup({
     dependencies = {
       'nvim-lua/plenary.nvim'
     }
+  },
+
+  {
+    'NvChad/nvim-colorizer.lua',
+    config = {}
   }
 
 }, {})
