@@ -211,7 +211,7 @@ alias mtr='/usr/local/Cellar/mtr/0.86/sbin/mtr'
 alias tmux='tmux -u'
 
 # Start web server
-alias serve='python3 -m http.server 8000'
+alias serve='python3 $curr/scripts/server.py'
 alias server='serve'
 
 # Disable globbing.
