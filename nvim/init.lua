@@ -141,6 +141,8 @@ local luasnip = require 'luasnip'
 
 luasnip.config.setup {}
 
+require('ibl').setup {}
+
 cmp.setup {
   snippet = {
     expand = function(args)
