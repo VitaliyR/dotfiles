@@ -26,6 +26,8 @@ local scrolloff = 10
 vim.o.scrolloff = scrolloff
 vim.keymap.set('n', '<leader>tc', ':let &scrolloff=999-&scrolloff+' .. scrolloff .. '<CR>')
 
+vim.keymap.set('n', '<leader>L', ':Lazy<CR>')
+
 -- Make line numbers default
 vim.wo.number = true
 vim.o.relativenumber = true
