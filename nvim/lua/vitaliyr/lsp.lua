@@ -92,6 +92,8 @@ local servers = {
       telemetry = { enable = false },
     },
   },
+
+  tailwindcss = {}
 }
 
 local fileTypes = {

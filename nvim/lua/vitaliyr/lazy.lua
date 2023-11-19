@@ -26,18 +26,34 @@ require('lazy').setup({
   'tpope/vim-fugitive',
   'tpope/vim-rhubarb',
 
-  { "MunifTanjim/nui.nvim", lazy = true },
+  { 'MunifTanjim/nui.nvim', lazy = true },
+
+  {
+    'akinsho/bufferline.nvim',
+    version = '*',
+    dependencies = 'nvim-tree/nvim-web-devicons'
+  },
+  
+  {
+    'folke/persistence.nvim',
+    event = 'BufReadPre',
+    opts = { options = vim.opt.sessionoptions:get() },
+    keys = {
+      { '<leader>qs', function() require('persistence').load() end, desc = 'Restore Session' },
+      { '<leader>qd', function() require('persistence').stop() end, desc = 'Don\'t Save Current Session' },
+    },
+  },
 
   -- notify
   {
     'rcarriga/nvim-notify',
     keys = {
       {
-        "<leader>un",
+        '<leader>un',
         function()
-          require("notify").dismiss({ silent = true, pending = true })
+          require('notify').dismiss({ silent = true, pending = true })
         end,
-        desc = "Dismiss all Notifications",
+        desc = 'Dismiss all Notifications',
       },
     },
     opts = {
@@ -87,13 +103,13 @@ require('lazy').setup({
     },
     -- stylua: ignore
     keys = {
-      { "<S-Enter>", function() require("noice").redirect(vim.fn.getcmdline()) end, mode = "c", desc = "Redirect Cmdline" },
-      { "<leader>snl", function() require("noice").cmd("last") end, desc = "Noice Last Message" },
-      { "<leader>snh", function() require("noice").cmd("history") end, desc = "Noice History" },
-      { "<leader>sna", function() require("noice").cmd("all") end, desc = "Noice All" },
-      { "<leader>snd", function() require("noice").cmd("dismiss") end, desc = "Dismiss All" },
-      { "<c-f>", function() if not require("noice.lsp").scroll(4) then return "<c-f>" end end, silent = true, expr = true, desc = "Scroll forward", mode = {"i", "n", "s"} },
-      { "<c-b>", function() if not require("noice.lsp").scroll(-4) then return "<c-b>" end end, silent = true, expr = true, desc = "Scroll backward", mode = {"i", "n", "s"}},
+      { '<S-Enter>', function() require('noice').redirect(vim.fn.getcmdline()) end, mode = 'c', desc = 'Redirect Cmdline' },
+      { '<leader>snl', function() require('noice').cmd('last') end, desc = 'Noice Last Message' },
+      { '<leader>snh', function() require('noice').cmd('history') end, desc = 'Noice History' },
+      { '<leader>sna', function() require('noice').cmd('all') end, desc = 'Noice All' },
+      { '<leader>snd', function() require('noice').cmd('dismiss') end, desc = 'Dismiss All' },
+      { '<c-f>', function() if not require('noice.lsp').scroll(4) then return '<c-f>' end end, silent = true, expr = true, desc = 'Scroll forward', mode = {'i', 'n', 's'} },
+      { '<c-b>', function() if not require('noice.lsp').scroll(-4) then return '<c-b>' end end, silent = true, expr = true, desc = 'Scroll backward', mode = {'i', 'n', 's'}},
     },
   },
 
@@ -170,16 +186,16 @@ require('lazy').setup({
           }
         }
       },
-      extensions = { "neo-tree" },
+      extensions = { 'neo-tree' },
     },
   },
 
   { -- Add indentation guides even on blank lines
     'lukas-reineke/indent-blankline.nvim',
-    main = "ibl"
+    main = 'ibl'
   },
 
-  -- "gc" to comment visual regions/lines
+  -- 'gc' to comment visual regions/lines
   { 'numToStr/Comment.nvim', opts = {} },
 
   -- Fuzzy Finder (files, lsp, etc)
