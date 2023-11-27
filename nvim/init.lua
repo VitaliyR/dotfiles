@@ -97,12 +97,33 @@ vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = tr
 vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
 
 -- go window/pane
+-- commented out because of using tmux plugin
 -- vim.keymap.set('n', '<C-l>', '<C-w>l')
 -- vim.keymap.set('n', '<C-h>', '<C-w>h')
 -- vim.keymap.set('n', '<C-j>', '<C-w>j')
 -- vim.keymap.set('n', '<C-k>', '<C-w>k')
 vim.keymap.set('n', '<C-w>|', '<C-w>v')
 vim.keymap.set('n', '<C-w>-', '<C-w>s')
+
+-- smart resize which follows natural direction
+ResizePane = function(dir, resDir, count)
+  local ldir = dir
+  if resDir then
+    if vim.fn.winnr('l') == vim.fn.winnr() then
+      ldir = not ldir
+    end
+  else
+    if vim.fn.winnr('j') == vim.fn.winnr() then
+      ldir = not ldir
+    end
+  end
+  vim.cmd((resDir and 'vert ' or '') .. 'resize ' .. (ldir and '+' or '-') .. count)
+end
+
+vim.keymap.set('n', '<C-w>h', ':lua ResizePane(false, true, vim.v.count1)<CR>')
+vim.keymap.set('n', '<C-w>l', ':lua ResizePane(true, true, vim.v.count1)<CR>')
+vim.keymap.set('n', '<C-w>k', ':lua ResizePane(false, false, vim.v.count1)<CR>')
+vim.keymap.set('n', '<C-w>j', ':lua ResizePane(true, false, vim.v.count1)<CR>')
 
 -- replace word
 vim.keymap.set('n', '<leader>rw', [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
