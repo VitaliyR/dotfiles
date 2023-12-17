@@ -1,2 +1,14 @@
-Final Cut Pro
-FileZilla
+XCode|itms-apps://itunes.apple.com/us/app/xcode/id497799835
+ColorSlurp|itms-apps://itunes.apple.com/us/app/colorslurp/id1287239339
+Slack|itms-apps://itunes.apple.com/us/app/slack/id803453959
+Shareful|itms-apps://itunes.apple.com/us/app/shareful/id1522267256
+Dato|itms-apps://itunes.apple.com/us/app/dato/id1470584107
+PixelmatorPro|itms-apps://itunes.apple.com/us/app/pixelmator-pro/id1289583905
+VPNUnlimited|itms-apps://itunes.apple.com/us/app/vpn-unlimited-ip-changer-app/id694633015
+Velja|itms-apps://itunes.apple.com/us/app/velja/id1607635845
+Unarchiver|itms-apps://itunes.apple.com/us/app/the-unarchiver/id425424353
+Zed|https://zed.dev
+CleanVPN|itms-apps://itunes.apple.com/us/app/clearvpn-secure-and-fast-vpn/id1532377665
+CleanMyMac|itms-apps://itunes.apple.com/us/app/cleanmymac-x/id1339170533
+FileZilla|https://filezilla-project.org/
+Final Cut Pro|https://ribachenko.com/

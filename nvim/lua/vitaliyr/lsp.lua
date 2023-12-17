@@ -57,20 +57,8 @@ end
 local servers = {
   -- rust_analyzer = {},
   tsserver = {
-    typescript = {
-      format = {
-        indentSize = vim.o.shiftwidth,
-        convertTabsToSpaces = vim.o.expandtab,
-        tabSize = vim.o.tabstop,
-      },
-    },
-    javascript = {
-      format = {
-        indentSize = vim.o.shiftwidth,
-        convertTabsToSpaces = vim.o.expandtab,
-        tabSize = vim.o.tabstop,
-      },
-    },
+    typescript = {},
+    javascript = {},
     completions = {
       completeFunctionCalls = true,
     }

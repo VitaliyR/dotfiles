@@ -60,7 +60,6 @@ if $isClient;
 
         brew tap homebrew/cask-fonts
 
-        brew install $(<cask.txt) --cask
         brew install $(<brew.txt)
         brew update
 
@@ -69,23 +68,20 @@ fi
 
 # Nano
 mkdir -p $HOME/.nano
-ln -s $HOME/.dotfiles/nano/.nanorc $HOME/
+ln -s $HOME/.dotfiles/nano/.nanorc $HOME/.nanorc
 
 # NVM
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
 
 if [[ "$OSTYPE" == darwin* ]] && $isClient; then
-    echo 'Install applications from the AppStore. Press any key to continue\n'
+    echo 'Install manual applications. Press any key to continue\n'
     while read line; do
         appName=$(cut -d'|' -f1 <<<"$line")
         appLink=$(cut -d'|' -f2 <<<"$line")
         echo $appName
         open $appLink
         read -n 1 </dev/tty
-    done < appstore.txt
-
-    echo 'Install manually:'
-    cat manual.txt
+    done < manual.txt
 
     echo 'Theme for Xcode'
 	open etc/Darcula.dvtcolortheme

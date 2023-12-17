@@ -164,7 +164,11 @@ require('neodev').setup()
 local cmp = require 'cmp'
 local luasnip = require 'luasnip'
 
-luasnip.config.setup {}
+luasnip.config.setup {
+  history = true,
+  region_check_events = "InsertEnter",
+  delete_check_events = "TextChanged,InsertLeave"
+}
 
 require('ibl').setup {}
 
