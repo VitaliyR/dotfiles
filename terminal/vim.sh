@@ -105,6 +105,12 @@ bindkey -v
 autoload -Uz edit-command-line
 zle -N edit-command-line
 bindkey -M vicmd 'vv' edit-command-line
+bindkey -M vicmd 'V' edit-command-line # this remaps `vv` to `V` (but overrides `visual-mode`)
+
+# Remove mode switching delay
+KEYTIMEOUT=5
+
+MODE_INDICATOR="%F{green}N%f"
 
 # allow ctrl-p, ctrl-n for navigate history (standard behaviour)
 bindkey '^P' up-history
@@ -180,8 +186,3 @@ if [[ -z "$RPS1" && -z "$RPROMPT" ]]; then
   RPS1='$(vi_mode_prompt_info)'
 fi
 
-# Remove mode switching delay
-KEYTIMEOUT=5
-bindkey -M vicmd 'V' edit-command-line # this remaps `vv` to `V` (but overrides `visual-mode`)
-
-MODE_INDICATOR="%F{green}N%f"
