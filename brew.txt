@@ -5,6 +5,7 @@ doctl
 extract_url
 ghostscript
 gnu-sed
+gnupg
 graphicsmagick
 irssi
 jpeg
@@ -12,9 +13,12 @@ macos-term-size
 mongodb/brew/mongodb-community@6.0
 nano
 neovim
+pinentry-mac
 postgresql@14
+postgresql@15
 python@3.10
 ripgrep
+rust
 stripe/stripe-cli/stripe
 tmux
 trash
@@ -29,10 +33,10 @@ firefox
 font-fira-code-nerd-font
 font-jetbrains-mono-nerd-font
 iina
+intellij-idea-ce
 iterm2
 karabiner-elements
 logitech-options
-mongodb-compass
 ngrok
 paw
 rectangle

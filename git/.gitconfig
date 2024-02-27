@@ -1,6 +1,7 @@
 [user]
 	name = Vitalii Rybachenko
 	email = vit@ribachenko.com
+	signingkey = B2EFBE8C8C994593
 
 [include]
     path = ~/.gitconfig.creds
@@ -37,3 +38,5 @@
 	trustExitCode = true
 [init]
 	defaultBranch = master
+[commit]
+	gpgsign = true
