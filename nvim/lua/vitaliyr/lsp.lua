@@ -63,7 +63,6 @@ local servers = {
       completeFunctionCalls = true,
     }
   },
-
   eslint = {},
   stylelint_lsp = {
     stylelintplus = {
@@ -73,14 +72,12 @@ local servers = {
   svelte = {},
   cssls = {},
   cssmodules_ls = {},
-
   lua_ls = {
     Lua = {
       workspace = { checkThirdParty = false },
       telemetry = { enable = false },
     },
   },
-
   tailwindcss = {}
 }
 
@@ -105,9 +102,17 @@ require('mason').setup()
 
 -- Ensure the servers above are installed
 local mason_lspconfig = require 'mason-lspconfig'
+local mason_tool_installer = require 'mason-tool-installer'
 
 mason_lspconfig.setup {
-  ensure_installed = vim.tbl_keys(servers),
+  ensure_installed = vim.tbl_keys(servers)
+}
+
+mason_tool_installer.setup {
+  ensure_installed = {
+    'prettier',
+    'stylua'
+  }
 }
 
 mason_lspconfig.setup_handlers {
