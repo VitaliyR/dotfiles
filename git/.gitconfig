@@ -1,10 +1,9 @@
 [user]
-	name = Vitalii Rybachenko
-	email = vit@ribachenko.com
-	signingkey = B2EFBE8C8C994593
+  name = Vitalii Rybachenko
+  email = vit@ribachenko.com
 
 [include]
-    path = ~/.gitconfig.creds
+  path = ~/.gitconfig.creds
 
 [github]
   user = vitaliyr
@@ -16,10 +15,10 @@
   ui = true
 
 [core]
-	excludesfile = /Users/salen/.gitignore_global
-	editor = nano
-	autocrlf = input
-	pager = diff-so-fancy | less --tabs=4 -RFX
+  excludesfile = /Users/salen/.gitignore_global
+  editor = nano
+  autocrlf = input
+  pager = diff-so-fancy | less --tabs=4 -RFX
 
 [format]
   pretty = %Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset
@@ -30,13 +29,9 @@
 
 [log]
   abbrevCommit = true
-[difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
-[mergetool "sourcetree"]
-	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	trustExitCode = true
+
 [init]
-	defaultBranch = master
+  defaultBranch = main
+
 [commit]
-	gpgsign = true
+  gpgsign = true
