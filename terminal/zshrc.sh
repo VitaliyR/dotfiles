@@ -14,6 +14,9 @@ fpath=("$curr/terminal" $fpath)
 autoload -Uz promptinit && promptinit
 prompt 'vitalii'
 
+# ignore ctrl-d
+setopt ignore_eof
+
 path=(/usr/local/opt/ruby/bin $path) # changing .zshenv doesn't work
 export GPG_TTY=$(tty) # For git commit signing
 
