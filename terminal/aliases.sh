@@ -226,6 +226,7 @@ alias rsync='noglob rsync'
 alias scp='noglob scp'
 alias sftp='noglob sftp'
 alias e='${(z)VISUAL:-${(z)EDITOR}}'
+alias k='kubectl'
 
 # LS with color output and numberized chmod
 function ll {
