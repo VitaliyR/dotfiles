@@ -1,6 +1,2 @@
-require('vitaliyr.core')
-
-require('vitaliyr.lazy')
-
-require('vitaliyr.lsp')
-
+-- bootstrap lazy.nvim, LazyVim and your plugins
+require("config.lazy")

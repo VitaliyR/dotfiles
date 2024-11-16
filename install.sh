@@ -30,7 +30,11 @@ echo "Installing for $(if $isClient; then echo 'client'; else echo 'server'; fi)
 # tmux
 ln -s "$HOME/.dotfiles/terminal/tmux.conf" "$HOME/.tmux.conf"
 
-ln -s "$HOME/.dotfiles/terminal/alacritty.toml" "$HOME/.alacritty.toml"
+# zellij
+ln -s "$HOME/.dotfiles/terminal/zellij" "$HOME/.config/zellij"
+
+# alacritty
+ln -s "$HOME/.dotfiles/terminal/alacritty/alacritty.toml" "$HOME/.alacritty.toml"
 
 # zsh
 ln -s "$HOME/.dotfiles/terminal/zshrc.sh" "$HOME/.zshrc"

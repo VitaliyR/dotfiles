@@ -308,6 +308,9 @@ alias gs='git status'
 alias gd='git diff'
 alias gl='git log'
 
+alias ll='eza -lha --group-directories-first --icons'
+alias lll='eza -a --tree --level=2 --long --icons --git'
+
 # Extract any archive with single command
 # TODO - add extraction directories
 function extract {

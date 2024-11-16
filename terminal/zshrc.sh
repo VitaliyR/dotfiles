@@ -7,6 +7,8 @@ source "$curr/terminal/aliases.sh"
 source "$curr/terminal/highlight.sh"
 source "$curr/terminal/completion.sh"
 
+export EDITOR=nvim
+
 autoload -U colors && colors
 
 # Load and execute the prompt theming system.
