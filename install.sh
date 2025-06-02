@@ -54,6 +54,11 @@ ln -s $(pwd)/settings/karabiner ~/.config/
 # neovim
 ln -s $(pwd)/nvim ~/.config/
 
+# zed
+mkdir -p ~/.config/zed
+ln -s $(pwd)/zed/keymap.json ~/.config/zed/keymap.json
+ln -s $(pwd)/zed/settings.json ~/.config/zed/settings.json
+
 echo "Have you installed Xcode already? Install it firstly"
 read -n 1 </dev/tty
 

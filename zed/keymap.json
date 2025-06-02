@@ -1,0 +1,34 @@
+[
+  {
+    "bindings": {
+      "ctrl-shift-tab": "pane::ActivatePreviousItem",
+      "ctrl-tab": "pane::ActivateNextItem",
+      "cmd-shift-o": "projects::OpenRecent",
+      "shift-space": "editor::ShowCompletions",
+      "cmd-shift-d": "pane::SplitRight",
+      "cmd-alt-l": "editor::Format",
+      "cmd-shift-s": "workspace::SaveAll"
+    }
+  },
+  {
+    "context": "Dock",
+    "bindings": {
+      "ctrl-w h": "workspace::ActivatePaneLeft",
+      "ctrl-w l": "workspace::ActivatePaneRight",
+      "ctrl-w k": "workspace::ActivatePaneUp",
+      "ctrl-w j": "workspace::ActivatePaneDown"
+    }
+  },
+  {
+    "context": "Workspace",
+    "bindings": {
+      "ctrl-shift-t": "workspace::ToggleBottomDock"
+    }
+  },
+  {
+    "context": "Editor",
+    "bindings": {
+      "alt-enter": "editor::ToggleCodeActions"
+    }
+  }
+]
