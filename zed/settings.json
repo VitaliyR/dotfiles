@@ -44,11 +44,9 @@
   },
   "buffer_font_size": 13.0,
   "tab_size": 2,
-  "experiments": {
-    "experimental_themes": true
-  },
   "default_dock_anchor": "bottom",
   "theme": "New Darcula",
+  "icon_theme": "JetBrains Icons Dark",
   "confirm_quit": true,
   "format_on_save": "off",
   "use_on_type_format": false,
