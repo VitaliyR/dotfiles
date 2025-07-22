@@ -36,6 +36,9 @@ ln -s "$HOME/.dotfiles/terminal/zellij" "$HOME/.config/zellij"
 # alacritty
 ln -s "$HOME/.dotfiles/terminal/alacritty/alacritty.toml" "$HOME/.alacritty.toml"
 
+# ghostty 
+ln -s "$HOME/.dotfiles/terminal/ghostty" "$HOME/config/ghostty"
+
 # zsh
 ln -s "$HOME/.dotfiles/terminal/zshrc.sh" "$HOME/.zshrc"
 source './terminal/zshrc.sh'

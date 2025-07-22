@@ -10,6 +10,7 @@ fzf
 gnu-sed
 gnupg
 graphicsmagick
+ghostty
 irssi
 kubectx
 lazygit

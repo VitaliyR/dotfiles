@@ -22,7 +22,6 @@
       "provider": "openai",
       "model": "gpt-3.5-turbo"
     },
-    "version": "2"
   },
   "vim_mode": true,
   "vim": {
