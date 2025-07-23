@@ -1,1 +1,4 @@
 theme = tokyonight_moon
+maximize = true
+window-decoration = none
+macos-titlebar-style = hidden
