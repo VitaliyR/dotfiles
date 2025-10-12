@@ -1,5 +1,6 @@
 awscli
 bat
+cffi
 diff-so-fancy
 doctl
 exiftool
@@ -10,7 +11,7 @@ fzf
 gnu-sed
 gnupg
 graphicsmagick
-ghostty
+icu4c@76
 irssi
 kubectx
 lazygit
@@ -31,6 +32,7 @@ tmux
 trash
 urlview
 vale
+websocat
 wget
 yt-dlp
 zellij
@@ -39,18 +41,23 @@ alfred
 balenaetcher
 brave-browser
 discord
+fbreader
 figma
 firefox
 font-fira-code-nerd-font
 font-jetbrains-mono-nerd-font
+ghostty
 iina
 intellij-idea-ce
 iterm2
 karabiner-elements
 logitech-options
+macfuse
 mongodb-compass
 paw
+postman
 qmk-toolbox
+rapidapi
 rectangle
 robo-3t
 signal
@@ -60,6 +67,7 @@ sublime-text
 telegram
 timemachineeditor
 transmission
+veracrypt
 viber
 visual-studio-code
 vlc

@@ -27,6 +27,12 @@ esac
 
 echo "Installing for $(if $isClient; then echo 'client'; else echo 'server'; fi)"
 
+# Detect OS
+isMac=false
+if [[ "$OSTYPE" == darwin* ]]; then
+    isMac=true
+fi
+
 # tmux
 ln -s "$HOME/.dotfiles/terminal/tmux.conf" "$HOME/.tmux.conf"
 
@@ -50,10 +56,6 @@ echo "source $HOME/.dotfiles/terminal/aliases.sh" >> .zshenv
 ln -s $(pwd)/git/.gitconfig ~/.gitconfig
 ln -s $(pwd)/git/.gitignore_global ~/.gitignore_global
 
-# karabiner
-mkdir -p ~/.config
-ln -s $(pwd)/settings/karabiner ~/.config/
-
 # neovim
 ln -s $(pwd)/nvim ~/.config/
 
@@ -61,6 +63,12 @@ ln -s $(pwd)/nvim ~/.config/
 mkdir -p ~/.config/zed
 ln -s $(pwd)/zed/keymap.json ~/.config/zed/keymap.json
 ln -s $(pwd)/zed/settings.json ~/.config/zed/settings.json
+
+if $isMac; then
+  # karabiner
+  mkdir -p ~/.config
+  ln -s $(pwd)/settings/karabiner ~/.config/
+fi
 
 echo "Have you installed Xcode already? Install it firstly"
 read -n 1 </dev/tty
@@ -85,7 +93,7 @@ ln -s $HOME/.dotfiles/nano/.nanorc $HOME/.nanorc
 # NVM
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
 
-if [[ "$OSTYPE" == darwin* ]] && $isClient; then
+if $isMac && $isClient; then
     echo 'Install manual applications. Press any key to continue\n'
     while read line; do
         appName=$(cut -d'|' -f1 <<<"$line")
