@@ -308,6 +308,7 @@ alias ga='git add .'
 alias gs='git status'
 alias gd='git diff'
 alias gl='git log'
+alias gclean='git branch | grep -v "^\*" | grep -v "main" | xargs git branch -D'
 
 alias ll='eza -lha --group-directories-first --icons'
 alias lll='eza -a --tree --level=2 --long --icons --git'
