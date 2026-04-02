@@ -295,6 +295,8 @@ function gu {
   git reset --soft HEAD
 }
 
+alias gbu='git branch --set-upstream-to=origin/$(git branch --show-current)'
+
 # Removes files by received glob
 function rmfiles {
   find . -name $1 -print0 | xargs -0 rm
