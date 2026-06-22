@@ -53,6 +53,7 @@ font-fira-code-nerd-font
 font-jetbrains-mono-nerd-font
 ghostty
 iina
+little-snitch
 logi-options+
 macfuse
 mongodb-compass

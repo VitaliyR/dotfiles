@@ -1,0 +1,2 @@
+duongductrong/snapzy
+mongodb/brew
