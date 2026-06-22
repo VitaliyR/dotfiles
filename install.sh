@@ -78,7 +78,7 @@ if $isClient;
         # Homebrew
         ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
-        brew tap homebrew/cask-fonts
+        xargs brew tap < brew-taps.txt
 
         brew install $(<brew.txt)
         brew update

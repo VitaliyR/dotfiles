@@ -7,6 +7,18 @@
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
 {
+  "project_panel": {
+    "dock": "left"
+  },
+  "outline_panel": {
+    "dock": "left"
+  },
+  "collaboration_panel": {
+    "dock": "left"
+  },
+  "git_panel": {
+    "dock": "left"
+  },
   "edit_predictions": {
     "mode": "subtle",
     "copilot": {
@@ -16,11 +28,12 @@
     "enabled_in_text_threads": false
   },
   "agent": {
+    "dock": "right",
     "default_profile": "ask",
     "model_parameters": [],
     "default_model": {
       "provider": "openai",
-      "model": "gpt-3.5-turbo"
+      "model": "gpt-5-codex"
     },
   },
   "vim_mode": true,
