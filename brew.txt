@@ -57,6 +57,7 @@ little-snitch
 logi-options+
 macfuse
 mongodb-compass
+mos
 paw
 postman
 qmk-toolbox
