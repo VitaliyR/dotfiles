@@ -16,7 +16,6 @@ My configuration files for utilities which I'm using everyday.
  * For casks look into [cask.txt](cask.txt)
 * Git config and global ignore
 * Nano syntax highlighter
-* iTerm color theme
 * Xcode theme
 
 ## Installation

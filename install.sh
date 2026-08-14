@@ -2,8 +2,6 @@
 
 cd $HOME/.dotfiles
 
-. ./variables.sh
-
 echo 'Installing on the server or local machine?'
 echo '(c)lient [default]'
 echo '(s)erver'
@@ -36,6 +34,9 @@ fi
 # tmux
 ln -s "$HOME/.dotfiles/terminal/tmux.conf" "$HOME/.tmux.conf"
 
+# aerospace
+ln -s "$HOME/.dotfiles/terminal/aerospace/aerospace.toml" "$HOME/.aerospace.toml"
+
 # zellij
 ln -s "$HOME/.dotfiles/terminal/zellij" "$HOME/.config/zellij"
 
@@ -64,12 +65,6 @@ mkdir -p ~/.config/zed
 ln -s $(pwd)/zed/keymap.json ~/.config/zed/keymap.json
 ln -s $(pwd)/zed/settings.json ~/.config/zed/settings.json
 
-if $isMac; then
-  # karabiner
-  mkdir -p ~/.config
-  ln -s $(pwd)/settings/karabiner ~/.config/
-fi
-
 echo "Have you installed Xcode already? Install it firstly"
 read -n 1 </dev/tty
 
@@ -82,8 +77,6 @@ if $isClient;
 
         brew install $(<brew.txt)
         brew update
-
-        open ~/.dotfiles/terminal/Personal.itermcolors
 fi
 
 # Nano
@@ -106,8 +99,5 @@ if $isMac && $isClient; then
     echo 'Theme for Xcode'
 	open etc/Darcula.dvtcolortheme
 fi
-
-# Velja
-cp ./settings/$VELJA_PLIST_NAME $VELJA_PLIST
 
 echo 'Profit'
