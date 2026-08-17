@@ -60,30 +60,6 @@
                 ]
               }
             ]
-          },
-          {
-            "description": "Right Command + 2: open Brave",
-            "manipulators": [
-              {
-                "type": "basic",
-                "from": {
-                  "key_code": "2",
-                  "modifiers": {
-                    "mandatory": ["right_command"],
-                    "optional": ["any"]
-                  }
-                },
-                "to": [
-                  {
-                    "software_function": {
-                      "open_application": {
-                        "bundle_identifier": "com.brave.Browser"
-                      }
-                    }
-                  }
-                ]
-              }
-            ]
           }
         ]
       },
