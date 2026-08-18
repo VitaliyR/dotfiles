@@ -20,6 +20,8 @@ alias serve='python3 ${DOTFILES_DIR:-$HOME/.dotfiles}/scripts/server.py'
 alias server='serve'
 alias k='kubectl'
 
+alias claude-netlify='CLAUDE_CONFIG_DIR="$HOME/.claude-netlify" claude'
+
 # LS with color output and numberized chmod
 function ll {
   ls -lahG --color=always "$1" | awk '{
