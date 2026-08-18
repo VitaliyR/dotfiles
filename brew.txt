@@ -6,6 +6,7 @@ doctl
 exiftool
 extract_url
 eza
+fd
 ffmpeg
 fzf
 gnu-sed
