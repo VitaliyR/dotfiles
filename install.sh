@@ -64,16 +64,9 @@ esac
 # neovim
 ln -s $(pwd)/nvim ~/.config/
 
-# Homebrew
-ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-
-xargs brew tap < brew-taps.txt
-
-brew install $(<brew.txt)
-brew update
-
 if $isMac && $isClient; then
     echo "Have you installed Xcode already? Install it firstly"
+    echo "Make sure that App Store is logged in as well"
     read -n 1 </dev/tty
 fi
 
@@ -100,20 +93,29 @@ ln -s $HOME/.dotfiles/nano/.nanorc $HOME/.nanorc
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
 
 if $isMac && $isClient; then
-    # aerospace
-    ln -s "$HOME/.dotfiles/terminal/aerospace/aerospace.toml" "$HOME/.aerospace.toml"
+    # defaults
+    defaults write NSGlobalDomain AppleShowAllExtensions -bool true
+    defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
+    defaults write com.apple.finder FXEnableRemoveFromICloudDriveWarning -bool false
+    defaults write com.apple.finder FXDefaultSearchScope -string 'SCcf'
+
+    # Homebrew
+    ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
+    xargs brew tap < brew-taps.txt
+
+    brew install $(<brew.txt)
+    brew update
+
+    # Mac App Store applications
+    while IFS='|' read -r appId appName; do
+        [[ -z "$appId" || "$appId" == \#* ]] && continue
+        echo "Installing $appName"
+        mas install "$appId"
+    done < mas.txt
 
     # Karabiner-Elements
     ln -s "$HOME/.dotfiles/terminal/karabiner" "$HOME/.config/karabiner"
-
-    echo 'Install manual applications. Press any key to continue\n'
-    while read line; do
-        appName=$(cut -d'|' -f1 <<<"$line")
-        appLink=$(cut -d'|' -f2 <<<"$line")
-        echo $appName
-        open $appLink
-        read -n 1 </dev/tty
-    done < manual.txt
 
     echo 'Theme for Xcode'
     open etc/Darcula.dvtcolortheme
