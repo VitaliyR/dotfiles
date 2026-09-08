@@ -100,19 +100,17 @@ if $isMac && $isClient; then
     defaults write com.apple.finder FXDefaultSearchScope -string 'SCcf'
 
     # Homebrew
-    ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+    if ! command -v brew >/dev/null 2>&1; then
+        /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
-    xargs brew tap < brew-taps.txt
+        if [[ -x /opt/homebrew/bin/brew ]]; then
+            eval "$(/opt/homebrew/bin/brew shellenv)"
+        elif [[ -x /usr/local/bin/brew ]]; then
+            eval "$(/usr/local/bin/brew shellenv)"
+        fi
+    fi
 
-    brew install $(<brew.txt)
-    brew update
-
-    # Mac App Store applications
-    while IFS='|' read -r appId appName; do
-        [[ -z "$appId" || "$appId" == \#* ]] && continue
-        echo "Installing $appName"
-        mas install "$appId"
-    done < mas.txt
+    brew bundle --file="$HOME/.dotfiles/Brewfile"
 
     # Karabiner-Elements
     ln -s "$HOME/.dotfiles/terminal/karabiner" "$HOME/.config/karabiner"

@@ -12,15 +12,14 @@ My configuration files for utilities which I'm using everyday.
  * ru - removes unnecessary ._* media files & DS_Store
  * extract - unzip any archive
 * Homebrew
- * For packages look into [brew.txt](brew.txt)
- * For casks look into [cask.txt](cask.txt)
+ * Packages, applications, taps, and App Store apps are managed in the [Brewfile](Brewfile)
 * Git config and global ignore
 * Nano syntax highlighter
 * Xcode theme
 
 ## Installation
-```
-cd ~ && git clone --recursive git://github.com/vitaliyr/dotfiles.git ~/.dotfiles && sh ~/.dotfiles/install.sh
+```sh
+cd ~ && git clone --recursive https://github.com/vitaliyr/dotfiles.git ~/.dotfiles && ~/.dotfiles/install.sh
 ```
 
 ## Thanks
