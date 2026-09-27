@@ -48,27 +48,39 @@ brew "wget"
 brew "yt-dlp"
 brew "zellij"
 
+# Command-line applications distributed as casks
+cask "codex"
+
 # Applications
+cask "1password"
 cask "alfred"
 cask "balenaetcher"
+cask "betterdisplay"
 cask "brave-browser"
+cask "cleanshot"
 cask "clearvpn"
 cask "cyberduck"
 cask "daisydisk"
 cask "discord"
+cask "docker-desktop"
+cask "electrum"
 cask "fbreader"
 cask "figma"
 cask "firefox"
+cask "firefox@developer-edition"
 cask "font-fira-code-nerd-font"
 cask "font-jetbrains-mono-nerd-font"
 cask "ghostty"
+cask "helium-browser"
 cask "hiddenbar"
 cask "iina"
+cask "karabiner-elements"
 cask "little-snitch"
 cask "logi-options+"
 cask "macfuse"
 cask "mongodb-compass"
 cask "mos"
+cask "parallels"
 cask "paw"
 cask "postman"
 cask "qmk-toolbox"
@@ -82,6 +94,7 @@ cask "sublime-text"
 cask "tailscale-app"
 cask "telegram"
 cask "transmission"
+cask "vcmi"
 cask "viber"
 cask "visual-studio-code"
 cask "vlc"
@@ -93,3 +106,11 @@ mas "Xcode", id: 497799835
 mas "Shareful", id: 1522267256
 mas "Pixelmator Pro", id: 1289583905
 mas "The Unarchiver", id: 425424353
+mas "rcmd (classic)", id: 1596283165
+mas "1Password for Safari", id: 1569813296
+mas "CleanMyKeyboard", id: 6468120888
+mas "Numbers", id: 361304891
+mas "Keynote", id: 361285480
+mas "Pages", id: 361309726
+mas "Mona Classic", id: 1659154653
+mas "WhatsApp Messenger", id: 310633997
