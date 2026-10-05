@@ -76,6 +76,10 @@ if $isClient;
         ln -s $(pwd)/git/.gitconfig ~/.gitconfig
         ln -s $(pwd)/git/.gitignore_global ~/.gitignore_global
 
+        if $isMac && [[ ! -e "$HOME/.gitconfig.creds" && ! -L "$HOME/.gitconfig.creds" ]]; then
+            install -m 600 "$(pwd)/git/.gitconfig.creds.client.mac.tpl" "$HOME/.gitconfig.creds"
+        fi
+
         # zed
         mkdir -p ~/.config/zed
         ln -s $(pwd)/zed/keymap.json ~/.config/zed/keymap.json
