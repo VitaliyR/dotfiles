@@ -25,6 +25,8 @@ export GPG_TTY=$(tty) # For git commit signing
 export PATH="/opt/homebrew/bin:$curr/terminal/bin:/opt/homebrew/opt/ruby/bin:$PATH"
 
 export NVM_DIR="$HOME/.nvm"
+# Drop Node versions inherited from a parent shell before nvm selects the default.
+path=(${path:#$NVM_DIR/versions/node/*/bin})
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
