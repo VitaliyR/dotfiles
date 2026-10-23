@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>NSNavPanelExpandedSizeForOpenMode</key>
+	<string>{880, 448}</string>
+	<key>NSOSPLastRootDirectory</key>
+	<data>
+	Ym9vawQCAAAAAAUQQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+	AAAAAAAAAAAAAAAAAAgBAAAEAAAAAwMAAAAAACAMAAAAAQEAAEFwcGxpY2F0aW9ucwQA
+	AAABBgAAEAAAAAgAAAAEAwAALlF2JQAAAAAEAAAAAQYAADAAAAAIAAAAAAQAAEHH34Av
+	AAAAGAAAAAECAAACAAAAAAAAAA8AAAAAAAAAAAAAAAAAAAAAAAAAAQUAAAgAAAABCQAA
+	ZmlsZTovLy8DAAAAAQEAAE1hYwAIAAAABAMAAABQoRtzAAAAJAAAAAEBAAAwNkM5ODRF
+	OS0yQjhELTQ1OTUtODQ0NS03Q0QwNDU5NDY2NEQYAAAAAQIAAIEAAAABAAAA7xMAAAEA
+	AAAAAAAAAAAAAAEAAAABAQAALwAAALQAAAD+////AQAAAAAAAAAOAAAABBAAACQAAAAA
+	AAAABRAAAEAAAAAAAAAAEBAAAFwAAAAAAAAAQBAAAEwAAAAAAAAAAiAAAPwAAAAAAAAA
+	BSAAAIQAAAAAAAAAECAAAJQAAAAAAAAAESAAALAAAAAAAAAAEiAAAKAAAAAAAAAAEyAA
+	AEwAAAAAAAAAICAAANwAAAAAAAAAMCAAAHwAAAAAAAAAAdAAAHwAAAAAAAAAENAAAAQA
+	AAAAAAAA
+	</data>
+	<key>NSStatusItem Preferred Position Item-0</key>
+	<real>549</real>
+	<key>SULastCheckTime</key>
+	<date>2026-10-05T13:34:34Z</date>
+	<key>SUUpdateGroupIdentifier</key>
+	<integer>144983127</integer>
+	<key>allowlist</key>
+	<false/>
+	<key>applications</key>
+	<data>
+	W10=
+	</data>
+	<key>block</key>
+	<data>
+	eyJ0eXBlIjoia2V5Ym9hcmQiLCJjb2RlIjo1NX0=
+	</data>
+	<key>buttonBindings</key>
+	<data>
+	W10=
+	</data>
+	<key>dash</key>
+	<data>
+	eyJ0eXBlIjoia2V5Ym9hcmQiLCJjb2RlIjo1OH0=
+	</data>
+	<key>deadZone</key>
+	<real>1</real>
+	<key>duration</key>
+	<real>3.6826761744966441</real>
+	<key>hideStatusItem</key>
+	<false/>
+	<key>optionsExist</key>
+	<string>optionsExist</string>
+	<key>reverse</key>
+	<false/>
+	<key>reverseHorizontal</key>
+	<true/>
+	<key>reverseVertical</key>
+	<true/>
+	<key>smooth</key>
+	<true/>
+	<key>smoothHorizontal</key>
+	<true/>
+	<key>smoothSimTrackpad</key>
+	<false/>
+	<key>smoothVertical</key>
+	<true/>
+	<key>speed</key>
+	<real>2.9933593750000003</real>
+	<key>step</key>
+	<real>10.389170312499999</real>
+	<key>toggle</key>
+	<data>
+	eyJjb2RlIjo1NiwidHlwZSI6ImtleWJvYXJkIn0=
+	</data>
+	<key>updateCheckOnAppStart</key>
+	<true/>
+	<key>updateIncludingBetaVersion</key>
+	<false/>
+</dict>
+</plist>

@@ -22,6 +22,19 @@ My configuration files for utilities which I'm using everyday.
 cd ~ && git clone --recursive https://github.com/vitaliyr/dotfiles.git ~/.dotfiles && ~/.dotfiles/install.sh
 ```
 
+## App settings
+
+Use `scripts/preferences.sh` to save a macOS preferences domain as XML or restore it. For Mos,
+run these commands from the repository root:
+
+```sh
+./scripts/preferences.sh save com.caldis.Mos settings/mos.plist
+./scripts/preferences.sh restore com.caldis.Mos settings/mos.plist
+```
+
+Quit Mos before restoring, then reopen it. `install.sh` restores the saved Mos
+preferences during macOS client installation.
+
 ## Thanks
 * [Paul Miller](https://github.com/paulmillr) for bootstrap and ideas
 

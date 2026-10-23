@@ -116,6 +116,9 @@ if $isMac && $isClient; then
 
     brew bundle --file="$HOME/.dotfiles/Brewfile"
 
+    # Restore Mos preferences from macOS's native plist format.
+    "$HOME/.dotfiles/scripts/preferences.sh" restore com.caldis.Mos "$HOME/.dotfiles/settings/mos.plist"
+
     # Karabiner-Elements
     ln -s "$HOME/.dotfiles/terminal/karabiner" "$HOME/.config/karabiner"
 
