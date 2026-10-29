@@ -50,7 +50,6 @@ brew "yt-dlp"
 brew "zellij"
 
 # Command-line applications distributed as casks
-cask "codex"
 
 # Applications
 cask "1password"
